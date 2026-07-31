@@ -12,6 +12,7 @@
     class="w-full bg-slate-800 text-white border border-accent px-3 py-2 rounded-lg text-sm cursor-pointer flex flex-col gap-1"
   >
     <button
+      type="button"
       class="hover:text-accent border-b border-accent cursor-pointer"
       (click)="changeLang('ar')"
       value="ar"
@@ -19,6 +20,7 @@
       العربية
     </button>
     <button
+      type="button"
       class="hover:text-accent border-b border-accent cursor-pointer"
       (click)="changeLang('en')"
       value="en"
@@ -26,6 +28,7 @@
       English
     </button>
     <button
+      type="button"
       class="hover:text-accent border-b border-accent cursor-pointer"
       (click)="changeLang('it')"
       value="it"
@@ -33,13 +36,19 @@
       Italiano
     </button>
     <button
+      type="button"
       class="hover:text-accent border-b border-accent cursor-pointer"
       (click)="changeLang('fr')"
       value="fr"
     >
       Français
     </button>
-    <button class="hover:text-accent cursor-pointer" (click)="changeLang('de')" value="es">
+    <button
+      type="button"
+      class="hover:text-accent cursor-pointer"
+      (click)="changeLang('de')"
+      value="es"
+    >
       Deutsch
     </button>
   </div>
