@@ -2,7 +2,7 @@
 
 A modern, highly responsive social media web application built with Angular, designed to connect users, share posts, and interact seamlessly with advanced UI/UX features.
 
-🔗 **Live Demo:** [View Live Site](https://angular-social-media-app.vercel.app)
+🔗 **Live Demo:** [View Live Site](http://angular-social-media-app-jade.vercel.app/)
 💻 **GitHub Repository:** [GitHub Repository](https://github.com/esogemy123-bot/angular-social-media-app)
 
 ---
