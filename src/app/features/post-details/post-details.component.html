@@ -1,0 +1,182 @@
+<div class="flex items-center justify-center px-3 py-3.5 mx-auto max-w-9xl flex-col min-w-[2xl]">
+  <div class="w-[50%]">
+    <button
+      (click)="goBack()"
+      class="cursor-pointer"
+      class="bg-white rounded-xl py-2 px-4 text-start mb-4 text-gray-700 flex items-center gap-2 hover:scale-105 cursor-pointer text-sm font-semibold transition-all duration-300 group"
+    >
+      <i
+        class="fa-solid fa-arrow-left group-hover:-translate-x-0.5 transition-all duration-300"
+      ></i>
+      Back
+    </button>
+  </div>
+  <div class="form p-5 py-7 dark:bg-dark-soft border-b border-b-gray w-full md:w-[50%]">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div
+          class="img w-15 h-15 bg-linear-to-r p-1 rounded-full flex justify-center items-center transition-all duration-300"
+        >
+          <img [src]="postDetails.user.photo" alt="" class="rounded-full w-full h-full" />
+        </div>
+        <div class="flex flex-col space-y-1">
+          <h2
+            class="bg-linear-to-r from-primary via-secondary to-accent bg-clip-text text-transparent font-extrabold text-xl"
+          >
+            {{ postDetails.user.name }}
+          </h2>
+          <p class="text-md text-gray-500 dark:text-gray-200">@{{ postDetails.user.username }}</p>
+        </div>
+      </div>
+    </div>
+    <p class="text-black text-sm font-semibold dark:text-gray-100">{{ postDetails.body }}</p>
+    @if (postDetails.image) {
+      <img
+        alt="post image"
+        class="w-full max-h-90 object-cover rounded shadow mt-2"
+        [src]="postDetails.image"
+      />
+    }
+    <div
+      class="flex font-normal justify-between items-center border-b-gray border-b-[1.6px] pb-4 px-2"
+    >
+      <div class="flex gap-5 items-center m-0">
+        <div class="flex items-center text-gray-600 dark:text-gray-100 gap-2 font-semibold">
+          <i class="hidden text-secondary fa-solid fa-heart"></i>
+          <p>{{ postDetails.likesCount }} likes</p>
+        </div>
+      </div>
+      <div class="flex gap-4">
+        <div class="flex items-center text-gray-500 text-sm dark:text-gray-100 gap-1 font-semibold">
+          <i class="fa-solid fa-share"></i>
+          <p>{{ postDetails.sharesCount }} shares</p>
+        </div>
+        <div class="flex items-center text-gray-500 text-sm dark:text-gray-100 gap-1 font-semibold">
+          <p>{{ postDetails.commentsCount }} comments</p>
+        </div>
+      </div>
+    </div>
+    <div class="grid grid-cols-3 w-full justify-between">
+      @if (postDetails.likes.includes(userId)) {
+        <button
+          (click)="
+            likePost(postDetails._id);
+            postDetails.likes.splice(postDetails.likes.indexOf(userId), 1);
+            postDetails.likesCount = postDetails.likesCount - 1
+          "
+          class="flex md:hidden cursor-pointer text-secondary transition-all duration-300 font-bold items-center gap-3 justify-center py-3"
+        >
+          <i class="fa-solid fa-heart"></i>
+          Liked
+        </button>
+      } @else {
+        <button
+          (click)="
+            likePost(postDetails._id);
+            postDetails.likes.push(userId);
+            postDetails.likesCount = postDetails.likesCount + 1
+          "
+          class="flex md:hidden cursor-pointer hover:text-secondary transition-all duration-300 font-bold dark:text-gray-100 text-gray-500 items-center gap-3 justify-center py-3"
+        >
+          <i class="fa-regular fa-heart"></i>
+          Like
+        </button>
+      }
+      @if (postDetails.likes.includes(userId)) {
+        <button
+          (click)="
+            likePost(postDetails._id);
+            postDetails.likes.splice(postDetails.likes.indexOf(userId), 1);
+            postDetails.likesCount = postDetails.likesCount - 1
+          "
+          class="md:flex hidden cursor-pointer text-secondary transition-all duration-300 font-bold items-center gap-3 justify-center py-3"
+        >
+          <i class="fa-solid fa-heart"></i>
+        </button>
+      } @else {
+        <button
+          (click)="
+            likePost(postDetails._id);
+            postDetails.likes.push(userId);
+            postDetails.likesCount = postDetails.likesCount + 1
+          "
+          class="md:flex hidden cursor-pointer hover:text-secondary transition-all duration-300 font-bold dark:text-gray-100 text-gray-500 items-center gap-3 justify-center py-3"
+        >
+          <i class="fa-regular fa-heart"></i>
+        </button>
+      }
+      <button
+        class="md:flex hidden cursor-pointer hover:text-secondary transition-all duration-300 font-bold dark:text-gray-100 text-gray-500 items-center justify-center py-3 gap-3"
+      >
+        <i class="fa-solid fa-comment"></i>
+        Comment
+      </button>
+      <button
+        class="flex md:hidden cursor-pointer hover:text-secondary transition-all duration-300 font-bold dark:text-gray-100 text-gray-500 items-center justify-center py-3 gap-3"
+      >
+        <i class="fa-solid fa-comment"></i>
+      </button>
+      @if (!postDetails.isShare) {
+        <button
+          (click)="sharePost(postDetails)"
+          class="md:flex hidden cursor-pointer hover:text-secondary transition-all duration-300 font-bold dark:text-gray-100 text-gray-500 items-center gap-2 justify-center py-3"
+        >
+          <i class="fa-solid fa-share-nodes"></i>
+          Share
+        </button>
+      } @else {
+        <div
+          class="md:flex hidden text-secondary transition-all duration-300 font-bold dark:text-gray-100 items-center gap-2 justify-center py-3"
+        >
+          <i class="fa-solid fa-share-nodes"></i>
+          Shared
+        </div>
+      }
+      @if (!postDetails.isShare) {
+        <button
+          (click)="sharePost(postDetails)"
+          class="flex md:hidden cursor-pointer hover:text-secondary transition-all duration-300 font-bold dark:text-gray-100 text-gray-500 items-center gap-2 justify-center py-3"
+        >
+          <i class="fa-solid fa-share-nodes"></i>
+        </button>
+      } @else {
+        <div
+          class="flex md:hidden text-secondary transition-all duration-300 font-bold dark:text-gray-100 items-center gap-2 justify-center py-3"
+        >
+          <i class="fa-solid fa-share-nodes"></i>
+        </div>
+      }
+    </div>
+    <div class="bg-slate-50 border-slate-200 rounded-2xl p-4">
+      <p class="text-slate-500 font-bold tracking-wide text-sm">TOP COMMENT</p>
+      <div class="w-full hidden bg-white rounded-2xl p-3 flex justify-between">
+        <div class="flex items-center gap-2">
+          <p class="font-bold">Comments</p>
+          <span
+            class="rounded-full bg-blue-200 flex items-center justify-center w-6 h-6 text-blue-600 text-sm font-bold"
+          >
+            2
+          </span>
+        </div>
+        <select
+          name=""
+          id=""
+          class="p-2 text-sm font-semibold bg-gray-100 border-gray-200 border-[1.6px] text-gray-600 rounded-2xl w-40"
+        >
+          <option class="" value="">Most relevant</option>
+          <option class="" value="">Newest</option>
+        </select>
+      </div>
+      <div class="flex p-3 gap-3 items-start mt-2 hidden">
+        <div class="img rounded-full w-9 h-9">
+          <img class="w-full rounded-full" src="images\image.png" alt="" />
+        </div>
+        <div class="bg-white rounded-2xl p-2 w-full">
+          <h2 class="text-gray-800 font-bold mb-2">Esraa</h2>
+          <p class="text-sm text-gray-700 font-semibold">.....</p>
+        </div>
+      </div>
+      <app-post-comments [postId]="postDetails._id"></app-post-comments>
+    </div>
+  </div>
+</div>

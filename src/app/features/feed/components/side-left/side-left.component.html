@@ -1,0 +1,49 @@
+<ul class="xl:block xl:space-y-2 grid grid-cols-2 gap-1 sticky top-6">
+  <li
+    (click)="selectFeed('all')"
+    [class]="
+      'flex justify-center xl:justify-start col-span-1 gap-2 items-center cursor-pointer p-3 rounded-2xl dark:bg-dark bg-blue-50 font-semibold ' +
+      (activeTab === 'all' ? 'text-primary dark:text-primary' : 'text-gray-600 dark:text-gray-100')
+    "
+  >
+    <i class="fa-solid fa-file"></i>
+    <p>{{ 'FEED_NAVIGATION.FEED' | translate }}</p>
+  </li>
+
+  <li
+    (click)="selectFeed('mine')"
+    [class]="
+      'flex justify-center xl:justify-start col-span-1 gap-2 items-center bg-gray-100 hover:bg-blue-50 dark:bg-dark dark:hover:bg-dark cursor-pointer p-3 rounded-2xl font-semibold hover:text-primary transition-all duration-200 ' +
+      (activeTab === 'mine' ? 'text-primary dark:text-primary' : 'text-gray-600 dark:text-gray-100')
+    "
+  >
+    <i class="fa-solid fa-star"></i>
+    <p>{{ 'FEED_NAVIGATION.MY_POSTS' | translate }}</p>
+  </li>
+
+  <li
+    (click)="selectFeed('community')"
+    [class]="
+      'flex justify-center xl:justify-start col-span-1 gap-2 items-center bg-gray-100 hover:bg-blue-50 dark:bg-dark dark:hover:bg-dark cursor-pointer p-3 rounded-2xl font-semibold hover:text-primary transition-all duration-200 ' +
+      (activeTab === 'community'
+        ? 'text-primary dark:text-primary'
+        : 'text-gray-600 dark:text-gray-100')
+    "
+  >
+    <i class="fa-solid fa-basketball"></i>
+    <p>{{ 'FEED_NAVIGATION.COMMUNITY' | translate }}</p>
+  </li>
+
+  <li
+    (click)="selectFeed('saved')"
+    [class]="
+      'flex justify-center xl:justify-start col-span-1 gap-2 items-center bg-gray-100 hover:bg-blue-50 dark:bg-dark dark:hover:bg-dark cursor-pointer p-3 rounded-2xl font-semibold hover:text-primary transition-all duration-200 ' +
+      (activeTab === 'saved'
+        ? 'text-primary dark:text-primary'
+        : 'text-gray-600 dark:text-gray-100')
+    "
+  >
+    <i class="fa-solid fa-save"></i>
+    <p>{{ 'FEED_NAVIGATION.SAVED' | translate }}</p>
+  </li>
+</ul>

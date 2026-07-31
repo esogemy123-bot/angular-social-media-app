@@ -1,0 +1,82 @@
+<div class="form p-5 py-7 w-full dark:bg-dark border-b border-b-gray">
+  <div class="flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div
+        class="img w-15 h-15 bg-linear-to-r p-1 rounded-full flex justify-center items-center transition-all duration-300"
+      >
+        <img src="images\image.png" alt="" class="rounded-full w-full h-full" />
+      </div>
+      <div class="flex flex-col space-y-1">
+        <h2
+          class="bg-linear-to-r from-primary via-secondary to-accent bg-clip-text text-transparent font-extrabold text-xl"
+        >
+          Esraa Al-khatip
+        </h2>
+        <p class="text-md text-gray-500 dark:text-gray-200">@esraa</p>
+      </div>
+    </div>
+  </div>
+  <p class="text-black text-sm font-semibold dark:text-gray-100">Lorem, ipsum dolor.</p>
+  <img
+    class="w-full max-h-90 object-cover rounded shadow mt-2"
+    src="\images\route.png"
+    alt="post image"
+  />
+  <div
+    class="flex font-normal justify-between items-center border-b-gray border-b-[1.6px] pb-4 px-2"
+  >
+    <div class="flex gap-5 items-center m-0">
+      <div class="flex items-center text-gray-600 dark:text-gray-100 gap-1 sm:gap-2 font-semibold">
+        <i class="hidden text-secondary fa-solid fa-heart"></i>
+        <p>0 likes</p>
+      </div>
+    </div>
+    <div class="flex gap-2 sm:h-4">
+      <div class="flex items-center text-gray-500 text-sm dark:text-gray-100 gap-1 font-semibold">
+        <i class="fa-solid fa-share hidden sm:block"></i>
+        <p>0 shares</p>
+      </div>
+      <div class="flex items-center text-gray-500 text-sm dark:text-gray-100 gap-1 font-semibold">
+        <p>0 comments</p>
+      </div>
+      <button
+        class="text-primary hover:text-accent transition-all duration-200 text-[14px] font-semibold cursor-pointer"
+      >
+        <p class="hidden sm:block">View details</p>
+        <p class="sm:hidden block">More</p>
+      </button>
+    </div>
+  </div>
+  <div class="grid grid-cols-3 w-full justify-between">
+    <button
+      #disLike
+      (click)="like.classList.replace('hidden', 'flex')"
+      (click)="disLike.classList.add('hidden')"
+      class="flex cursor-pointer hover:text-secondary transition-all duration-300 font-bold dark:text-gray-100 text-gray-500 items-center gap-3 justify-center py-3"
+    >
+      <i class="fa-regular fa-heart"></i>
+      Like
+    </button>
+    <button
+      #like
+      (click)="like.classList.add('hidden')"
+      (click)="disLike.classList.replace('hidden', 'flex')"
+      class="hidden cursor-pointer text-secondary transition-all duration-300 font-bold items-center gap-3 justify-center py-3"
+    >
+      <i class="hidden fa-solid fa-heart"></i>
+      Like
+    </button>
+    <button
+      class="flex cursor-pointer hover:text-secondary transition-all duration-300 font-bold dark:text-gray-100 text-gray-500 items-center justify-center py-3 gap-3"
+    >
+      <i class="fa-solid fa-comment"></i>
+      Comment
+    </button>
+    <button
+      class="flex cursor-pointer hover:text-secondary transition-all duration-300 font-bold dark:text-gray-100 text-gray-500 items-center gap-2 justify-center py-3"
+    >
+      <i class="fa-solid fa-share-nodes"></i>
+      Share
+    </button>
+  </div>
+</div>

@@ -1,0 +1,231 @@
+{
+  "AUTH": {
+    "LOGIN_TITLE": "Log in to Route Posts",
+    "LOGIN_SUBTITLE": "log in and continue your social journey.",
+    "EMAIL_PLACEHOLDER": "email or username",
+    "PASSWORD_PLACEHOLDER": "Password",
+    "LOGIN_BTN": "Log In",
+    "FORGOT_PASSWORD": "Forgot password?",
+    "DANGER_SR": "Danger",
+    "ERRORS": {
+      "LOGIN_REQUIRED": "email or username is required.",
+      "LOGIN_MINLENGTH": "must be at least 3 characters.",
+      "PASSWORD_REQUIRED": "Password is required.",
+      "PASSWORD_PATTERN": "Must contain at least 8 chars, 1 uppercase, 1 lowercase, 1 number, and 1 special"
+    }
+  },
+  "COMMON": {
+    "DANGER": "Danger"
+  },
+  "REGISTER": {
+    "TITLE": "Create a new account",
+    "SUBTITLE": "It is quick and easy.",
+    "NAME": {
+      "LABEL": "Full name",
+      "PLACEHOLDER": "Full name",
+      "REQUIRED": "Full Name is required.",
+      "MINLENGTH": "Name must be at least 3 characters."
+    },
+    "USERNAME": {
+      "LABEL": "Username",
+      "PLACEHOLDER": "Username (optional)",
+      "INVALID": "Please enter a valid email or username."
+    },
+    "EMAIL": {
+      "LABEL": "Email address",
+      "PLACEHOLDER": "Email address",
+      "REQUIRED": "Email is required.",
+      "INVALID": "Please enter a valid email address."
+    },
+    "GENDER": {
+      "LABEL": "Select Gender",
+      "PLACEHOLDER": "Select Gender",
+      "MALE": "Male",
+      "FEMALE": "Female",
+      "REQUIRED": "Please select your gender."
+    },
+    "DOB": {
+      "LABEL": "Date of birth",
+      "REQUIRED": "Date of birth is required."
+    },
+    "PASSWORD": {
+      "LABEL": "Password",
+      "PLACEHOLDER": "Password",
+      "SHOW": "Show password",
+      "HIDE": "Hide password",
+      "REQUIRED": "Password is required.",
+      "PATTERN": "Must contain at least 8 chars, 1 uppercase, 1 lowercase, 1 number, and 1 special character."
+    },
+    "CONFIRM_PASSWORD": {
+      "LABEL": "Confirm password",
+      "PLACEHOLDER": "Confirm password",
+      "SHOW": "Show password",
+      "HIDE": "Hide password",
+      "REQUIRED": "Please confirm your password.",
+      "MISMATCH": "Passwords do not match."
+    },
+    "SUBMIT": "Create New Account"
+  },
+  "PROFILE": {
+    "MEMBER_TAG": "Route Posts member",
+    "FOLLOWING_BTN": "Following",
+    "FOLLOW_BTN": "Follow",
+    "FOLLOWERS": "FOLLOWERS",
+    "FOLLOWING": "FOLLOWING",
+    "BOOKMARKS": "BOOKMARKS",
+    "ABOUT": "About",
+    "ACTIVE_STATUS": "Active on Route Posts",
+    "MY_POSTS_TITLE": "MY POSTS",
+    "SAVED_POSTS_TITLE": "SAVED POSTS",
+    "TAB_MY_POSTS": "My Posts",
+    "TAB_SAVED_POSTS": "Saved Posts"
+  },
+  "POSTS": {
+    "VIEW_DETAILS": "View details",
+    "MORE": "More",
+    "LIKES": "likes",
+    "SHARES": "shares",
+    "COMMENTS": "comments",
+    "NO_POSTS_OWN": "You haven't shared any posts.",
+    "NO_POSTS_OTHER": "There are no posts yet."
+  },
+  "SAVED_POSTS": {
+    "VIEW_DETAILS": "View details",
+    "MORE": "More",
+    "LIKES": "likes",
+    "SHARES": "shares",
+    "COMMENTS": "comments",
+    "NO_SAVED_POSTS": "No saved posts yet.",
+    "USER_PHOTO": "User photo",
+    "VIEW_IMAGE_FULL": "View full image",
+    "ATTACHED_IMAGE": "Attached image",
+    "IMAGE_MODAL": "Image view modal",
+    "CLOSE_MODAL": "Close modal"
+  },
+  "NOTIFICATIONS": {
+    "TITLE": "Notifications",
+    "SUBTITLE": "Realtime updates for likes, comments, shares, and follows.",
+    "MARK_ALL_READ": "Mark all as read",
+    "ALL": "All",
+    "UNREAD": "Unread",
+    "LIKED_POST": "liked your post.",
+    "COMMENTED_POST": "commented on your post.",
+    "FOLLOWED_USER": "started following you.",
+    "SHARED_POST": "shared your post.",
+    "INTERACTED": "interacted with you.",
+    "CONTENT_UNAVAILABLE": "This content is no longer available.",
+    "READ": "read",
+    "MARK_READ": "Mark as read",
+    "NO_NOTIFICATIONS": "No notifications yet."
+  },
+  "NAVBAR": {
+    "BRAND": "Route Posts",
+    "FEED": "Feed",
+    "PROFILE": "Profile",
+    "NOTIFICATIONS": "Notifications",
+    "CUSTOMIZE_FONT": "Customize Font",
+    "CUSTOMIZE_THEME": "Customize Theme Color",
+    "DEFAULT_FONT": "Default Font",
+    "SETTINGS": "Settings",
+    "DARK_MODE": "Dark Mode",
+    "LIGHT_MODE": "Light Mode",
+    "LOG_OUT": "Log Out",
+    "SELECT_FONT": "Select font type",
+    "CHANGE_LANG_BTN": "change Language"
+  },
+  "FEED": {
+    "CREATE_POST": {
+      "PLACEHOLDER": "What's on your mind, {{ name }}?",
+      "PRIVACY": {
+        "PUBLIC": "public",
+        "FOLLOWERS": "followers",
+        "ONLY_ME": "only me"
+      },
+      "PHOTO_VIDEO": "Photo/Video",
+      "FEELING_ACTIVITY": "Feeling/Activity",
+      "POST_BTN": "Post"
+    },
+    "POST": {
+      "POSTED_IN": "in",
+      "SAVE": "Save post",
+      "UNSAVE": "Unsave post",
+      "EDIT": "Edit post",
+      "DELETE": "Delete post",
+      "CANCEL": "cancel",
+      "UPDATE": "update",
+      "LIKES": "likes",
+      "SHARES": "shares",
+      "COMMENTS": "comments",
+      "VIEW_DETAILS": "View details",
+      "MORE": "More",
+      "LIKE": "Like",
+      "LIKED": "Liked",
+      "COMMENT": "Comment",
+      "SHARE": "Share",
+      "SHARED": "Shared"
+    },
+    "REACHED_END": "You reached the end"
+  },
+  "CHANGE_PASSWORD": {
+    "TITLE": "Change Password",
+    "SUBTITLE": "Keep your account secure by using a strong password.",
+    "CURRENT_PASSWORD": {
+      "LABEL_PREFIX": "Current",
+      "LABEL_SUFFIX": "password",
+      "PLACEHOLDER": "Enter current password",
+      "REQUIRED": "Current password is required."
+    },
+    "NEW_PASSWORD": {
+      "LABEL_PREFIX": "New",
+      "LABEL_SUFFIX": "password",
+      "PLACEHOLDER": "Enter new password",
+      "REQUIRED": "New password is required.",
+      "PATTERN": "Must contain at least 8 chars, 1 uppercase, 1 lowercase, 1 number, and 1 special"
+    },
+    "CONFIRM_PASSWORD": {
+      "LABEL_PREFIX": "Confirm new",
+      "LABEL_SUFFIX": "password",
+      "PLACEHOLDER": "Re-enter new password",
+      "REQUIRED": "Please confirm your password.",
+      "MISMATCH": "Passwords do not match."
+    },
+    "BUTTON": {
+      "SUBMIT": "Update password",
+      "UPDATING": "Updating..."
+    }
+  },
+  "SUGGESTED_FRIENDS": {
+    "TITLE": "Suggested Friends",
+    "SEARCH_PLACEHOLDER": "Search friends",
+    "FOLLOWERS_COUNT": "{{ count }} followers",
+    "FOLLOWING": "Following",
+    "FOLLOW": "Follow",
+    "EMPTY": {
+      "TITLE": "No friends found",
+      "DESCRIPTION": "We couldn't find anyone matching \"{{ query }}\". Try checking the spelling!",
+      "NO_SUGGESTIONS": "No friend suggestions available right now."
+    }
+  },
+  "FEED_NAVIGATION": {
+    "FEED": "Feed",
+    "MY_POSTS": "My Posts",
+    "COMMUNITY": "Community",
+    "SAVED": "Saved"
+  },
+  "COMMENTS": {
+    "TITLE": "Comments",
+    "PLACEHOLDER": "Comment as ...",
+    "PHOTO_VIDEO": "Photo/video",
+    "CANCEL": "cancel",
+    "UPDATE": "update",
+    "LIKES": "Likes:",
+    "REPLIES": "Replies:"
+  },
+  "REPLIES": {
+    "VIEW": "View replies",
+    "HIDE": "Hide replies",
+    "LIKES": "Likes:",
+    "PLACEHOLDER": "Write a reply...",
+    "ATTACH_PHOTO": "Attach photo"
+  }
+}

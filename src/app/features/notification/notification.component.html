@@ -1,0 +1,219 @@
+<section class="px-3 py-3.5 mx-auto max-w-7xl min-h-screen" aria-label="Notifications Section">
+  <div class="container bg-linear-to-br p-1 from-primary via-secondary to-accent rounded-3xl">
+    <div class="p-4 md:p-7 bg-white form dark:bg-dark rounded-[22px]">
+      <!----- Header Section ----->
+      <header class="border-b-gray-300 border-b-[1.6px] w-full pb-6">
+        <div class="flex justify-between gap-4 flex-col md:flex-row md:gap-0">
+          <div class="space-y-1.5">
+            <h1
+              class="text-3xl font-extrabold bg-linear-to-br from-primary via-secondary to-accent bg-clip-text text-transparent"
+            >
+              {{ 'NOTIFICATIONS.TITLE' | translate }}
+            </h1>
+            <p class="text-gray-600 dark:text-white pt-2">
+              {{ 'NOTIFICATIONS.SUBTITLE' | translate }}
+            </p>
+
+            <!-- Controls Grid -->
+            <div class="grid grid-cols-4 justify-center gap-3 pt-3">
+              @if (unReadCount > 0) {
+                <button
+                  type="button"
+                  (click)="markAllAsRead()"
+                  [attr.aria-label]="'NOTIFICATIONS.MARK_ALL_READ' | translate"
+                  class="col-span-4 cursor-pointer md:hidden hover:bg-blue-100 hover:text-gray-700 hover:-translate-0.5 transition-all duration-300 text-gray-600 flex justify-center items-center gap-2 px-3 py-5 rounded-xl h-4 bg-blue-50 border-gray-200 border-[1.6px] focus:outline-none focus:ring-2 focus:ring-primary"
+                >
+                  <i class="fa-solid fa-check-double" aria-hidden="true"></i>
+                  <span class="font-semibold">{{ 'NOTIFICATIONS.MARK_ALL_READ' | translate }}</span>
+                </button>
+              }
+
+              <button
+                type="button"
+                (click)="toggleFilter(true)"
+                [class.active-tab]="unRead === true"
+                [attr.aria-label]="'NOTIFICATIONS.FILTER_ALL' | translate"
+                class="main-btn col-span-2 mb-0 font-semibold bg-linear-to-br p-1 from-primary to-accent px-5 py-1 hover:scale-105 transition-all duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary"
+              >
+                {{ 'NOTIFICATIONS.ALL' | translate }}
+              </button>
+
+              <button
+                type="button"
+                (click)="toggleFilter(false)"
+                [class.active-tab]="unRead === false"
+                [attr.aria-label]="'NOTIFICATIONS.FILTER_UNREAD' | translate"
+                class="hover:bg-blue-100 hover:text-gray-700 transition-all duration-300 main-btn col-span-2 mb-0 font-semibold bg-blue-50 px-5 py-1 text-gray-700 dark:bg-dark-soft dark:text-gray-100 dark:hover:bg-dark-backdrop dark:hover:text-white flex items-center justify-between cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary"
+              >
+                <span>{{ 'NOTIFICATIONS.UNREAD' | translate }}</span>
+                <span
+                  class="text-accent bg-blue-50 flex items-center justify-center rounded-3xl w-6 h-6 border border-accent text-xs font-bold"
+                >
+                  {{ unReadCount }}
+                </span>
+              </button>
+            </div>
+          </div>
+
+          @if (unReadCount > 0) {
+            <div
+              class="bg-linear-to-br p-0 md:p-0.5 from-primary via-secondary to-accent rounded-xl h-full hidden md:block"
+            >
+              <button
+                type="button"
+                (click)="markAllAsRead()"
+                [attr.aria-label]="'NOTIFICATIONS.MARK_ALL_READ' | translate"
+                class="cursor-pointer hover:bg-blue-100 hover:text-gray-700 transition-all duration-300 text-gray-600 flex justify-center items-center gap-2 px-3 py-5 rounded-xl h-4 bg-blue-50 border-gray-200 border-[1.6px] focus:outline-none focus:ring-2 focus:ring-primary"
+              >
+                <i class="fa-solid fa-check-double" aria-hidden="true"></i>
+                <span class="font-semibold">{{ 'NOTIFICATIONS.MARK_ALL_READ' | translate }}</span>
+              </button>
+            </div>
+          }
+        </div>
+      </header>
+
+      <!----- Notifications List ----->
+      <div class="mt-4 space-y-3" role="feed" aria-busy="false">
+        @for (notification of allNotifications; track notification._id) {
+          <article
+            (click)="onNotificationClick(notification)"
+            (keydown.enter)="onNotificationClick(notification)"
+            role="button"
+            tabindex="0"
+            [attr.aria-label]="
+              ('NOTIFICATIONS.NOTIFICATION_FROM' | translate) + ' ' + notification.actor.name
+            "
+            class="group relative flex gap-3 rounded-xl border p-3 transition sm:rounded-2xl sm:p-4 border-[#dbeafe] bg-[#edf4ff] dark:hover:text-white dark:hover:bg-dark-backdrop dark:text-gray-100 dark:bg-dark-soft cursor-pointer hover:shadow-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary"
+            [class.bg-white]="notification.isRead"
+            [class.opacity-70]="notification.entity?.unavailable"
+          >
+            <!-- User Avatar & Badge -->
+            <div class="relative shrink-0 flex items-start">
+              <div class="block">
+                <img
+                  [src]="notification.actor.photo"
+                  [alt]="notification.actor.name || ('NOTIFICATIONS.USER_PHOTO' | translate)"
+                  class="h-11 w-11 rounded-full object-cover"
+                />
+              </div>
+
+              <!-- Badge Icons according to type (Using -end-1 instead of -right-1 for RTL support) -->
+              <span
+                class="absolute -bottom-1 -end-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-white ring-2 ring-white text-accent shadow-xs"
+              >
+                @switch (notification.type) {
+                  @case ('like_post') {
+                    <i class="fa-solid fa-heart text-xs text-red-500" aria-hidden="true"></i>
+                  }
+                  @case ('comment_post') {
+                    <i class="fa-solid fa-comment text-xs text-blue-500" aria-hidden="true"></i>
+                  }
+                  @case ('follow_user') {
+                    <i class="fa-solid fa-user-plus text-xs text-green-500" aria-hidden="true"></i>
+                  }
+                  @case ('share_post') {
+                    <i class="fa-solid fa-share text-xs text-purple-500" aria-hidden="true"></i>
+                  }
+                  @default {
+                    <i class="fa-solid fa-bell text-xs text-accent" aria-hidden="true"></i>
+                  }
+                }
+              </span>
+            </div>
+
+            <!-- Content Area -->
+            <div class="min-w-0 flex-1">
+              <div class="flex flex-wrap items-start justify-between gap-1.5 sm:gap-2">
+                <p class="text-sm leading-6 text-slate-800 dark:text-gray-100">
+                  <span class="font-extrabold text-slate-900 dark:text-white hover:underline">
+                    {{ notification.actor.name }}
+                  </span>
+
+                  <!-- Dynamic text based on type -->
+                  <span class="text-slate-600 dark:text-gray-300 ms-1">
+                    @switch (notification.type) {
+                      @case ('like_post') {
+                        {{ 'NOTIFICATIONS.TYPES.LIKE_POST' | translate }}
+                      }
+                      @case ('comment_post') {
+                        {{ 'NOTIFICATIONS.TYPES.COMMENT_POST' | translate }}
+                      }
+                      @case ('follow_user') {
+                        {{ 'NOTIFICATIONS.TYPES.FOLLOW_USER' | translate }}
+                      }
+                      @case ('share_post') {
+                        {{ 'NOTIFICATIONS.TYPES.SHARE_POST' | translate }}
+                      }
+                      @default {
+                        {{ 'NOTIFICATIONS.TYPES.DEFAULT' | translate }}
+                      }
+                    }
+                  </span>
+                </p>
+
+                <div class="flex items-center gap-1.5 sm:gap-2 ms-auto">
+                  <time
+                    [attr.datetime]="notification.createdAt"
+                    class="text-xs font-semibold text-slate-500 dark:text-gray-400"
+                  >
+                    {{ notification.createdAt | date: 'shortTime' }}
+                  </time>
+
+                  @if (!notification.isRead) {
+                    <span
+                      class="w-2 h-2 rounded-full bg-[#1877f2]"
+                      [attr.aria-label]="'NOTIFICATIONS.UNREAD_ITEM' | translate"
+                    ></span>
+                  }
+                </div>
+              </div>
+
+              <!-- Post Preview or Unavailable Warning -->
+              @if (!notification.entity?.unavailable && notification.entity?.body) {
+                <p
+                  class="mt-1 text-xs text-slate-600 dark:text-gray-300 line-clamp-1 bg-white/60 dark:bg-black/20 p-1.5 rounded-md italic"
+                >
+                  "{{ notification.entity.body }}"
+                </p>
+              } @else if (notification.entity?.unavailable) {
+                <p class="mt-1 text-xs text-red-500 font-medium italic flex items-center gap-1">
+                  <i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i>
+                  {{ 'NOTIFICATIONS.UNAVAILABLE' | translate }}
+                </p>
+              }
+
+              <!-- Actions & Read Status -->
+              <div class="mt-2 flex items-center gap-2 dark:text-gray-100">
+                @if (notification.isRead) {
+                  <span class="text-xs text-slate-500 dark:text-gray-400 flex items-center gap-1">
+                    {{ 'NOTIFICATIONS.READ' | translate }}
+                    <i class="fa-solid fa-check-circle text-accent" aria-hidden="true"></i>
+                  </span>
+                } @else {
+                  <button
+                    type="button"
+                    (click)="markNotificationAsRead(notification, $event)"
+                    [attr.aria-label]="'NOTIFICATIONS.MARK_READ' | translate"
+                    class="inline-flex items-center gap-1.5 rounded-md bg-white px-2.5 py-1 text-xs font-bold text-[#1877f2] ring-1 ring-[#dbeafe] hover:bg-[#e7f3ff] dark:bg-dark-soft dark:hover:bg-dark-backdrop dark:text-gray-100 transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary"
+                  >
+                    <i class="fa-solid fa-check text-xs" aria-hidden="true"></i>
+                    {{ 'NOTIFICATIONS.MARK_READ' | translate }}
+                  </button>
+                }
+              </div>
+            </div>
+          </article>
+        } @empty {
+          <div
+            class="container form bg-blue-50 flex justify-center items-center dark:bg-dark-soft p-8 rounded-2xl"
+          >
+            <p class="text-gray-600 font-semibold dark:text-white">
+              {{ 'NOTIFICATIONS.EMPTY' | translate }}
+            </p>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

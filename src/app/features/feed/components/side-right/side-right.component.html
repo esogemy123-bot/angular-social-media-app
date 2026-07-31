@@ -1,0 +1,104 @@
+<div class="flex items-center justify-between mb-3">
+  <div class="flex gap-2 items-center">
+    <i class="fa-solid fa-user-group text-accent" aria-hidden="true"></i>
+    <h3 class="text-lg font-bold text-gray-900 dark:text-gray-100">
+      {{ 'SUGGESTED_FRIENDS.TITLE' | translate }}
+    </h3>
+  </div>
+  <span
+    class="bg-blue-100 dark:bg-blue-900/40 text-primary dark:text-blue-300 font-bold text-xs w-7 h-7 flex items-center justify-center rounded-full shadow-xs"
+  >
+    {{ suggestedFriends?.length || 0 }}
+  </span>
+</div>
+
+<!----- Search Friends ----->
+<div class="relative">
+  <input
+    [formControl]="searchControl"
+    type="text"
+    [placeholder]="'SUGGESTED_FRIENDS.SEARCH_PLACEHOLDER' | translate"
+    [attr.aria-label]="'SUGGESTED_FRIENDS.SEARCH_PLACEHOLDER' | translate"
+    class="bg-gray-50 dark:bg-dark text-gray-700 dark:text-gray-100 placeholder:text-gray-400 dark:placeholder:text-gray-500 p-2.5 px-3 rounded-2xl w-full border border-gray-200 dark:border-gray-800 focus:outline-none focus:ring-2 focus:ring-primary/40 text-sm transition-all"
+  />
+</div>
+
+<!----- Friend Cards List ----->
+@for (user of suggestedFriends; track user._id) {
+  <div
+    class="p-3 rounded-2xl bg-white dark:bg-dark border border-gray-100 dark:border-gray-800/80 shadow-xs mt-3 transition-all"
+  >
+    <div class="flex items-center justify-between gap-3">
+      <!-- User Avatar & Info -->
+      <div class="flex items-center gap-3 min-w-0">
+        <div
+          class="w-11 h-11 bg-linear-to-r from-primary via-secondary to-accent p-0.5 rounded-full flex justify-center items-center shrink-0"
+        >
+          <img
+            [routerLink]="['/main/profile', user._id]"
+            [src]="user.photo || 'assets/images/default-avatar.png'"
+            [alt]="user.name || ('NOTIFICATIONS.USER_PHOTO' | translate)"
+            loading="lazy"
+            class="rounded-full w-full h-full object-cover cursor-pointer hover:opacity-90 transition-opacity"
+          />
+        </div>
+        <div class="flex flex-col min-w-0">
+          <h4
+            [routerLink]="['/main/profile', user._id]"
+            class="bg-linear-to-r cursor-pointer from-primary via-secondary to-accent bg-clip-text text-transparent font-extrabold text-sm truncate hover:opacity-80 transition-opacity"
+          >
+            {{ user.name }}
+          </h4>
+          <p class="text-xs text-gray-500 dark:text-gray-400 truncate">@{{ user.username }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Followers Count & Follow Button -->
+    <div
+      class="flex justify-between items-center mt-3 pt-2 border-t border-gray-50 dark:border-gray-800/50"
+    >
+      <span class="text-xs font-semibold text-gray-500 dark:text-gray-400">
+        {{ 'SUGGESTED_FRIENDS.FOLLOWERS_COUNT' | translate: { count: user.followersCount || 0 } }}
+      </span>
+
+      <button
+        type="button"
+        (click)="toggleUserFollow(user._id)"
+        [class]="
+          user.isFollowed
+            ? 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-gray-700'
+            : 'bg-secondary hover:bg-secondary/90 text-white shadow-xs hover:-translate-y-0.5'
+        "
+        class="rounded-xl text-xs font-bold px-3.5 py-1.5 cursor-pointer transition-all duration-200 flex items-center gap-1.5 shrink-0"
+      >
+        @if (user.isFollowed) {
+          <i class="fa-solid fa-user-check text-xs"></i>
+          <span>{{ 'SUGGESTED_FRIENDS.FOLLOWING' | translate }}</span>
+        } @else {
+          <i class="fa-solid fa-user-plus text-xs"></i>
+          <span>{{ 'SUGGESTED_FRIENDS.FOLLOW' | translate }}</span>
+        }
+      </button>
+    </div>
+  </div>
+} @empty {
+  <!-- Empty State -->
+  <div
+    class="flex flex-col items-center justify-center p-6 mt-4 text-center bg-gray-50 dark:bg-dark/50 rounded-2xl border border-dashed border-gray-200 dark:border-gray-800"
+  >
+    <div class="text-gray-400 dark:text-gray-500 text-2xl mb-2">
+      <i class="fa-solid fa-magnifying-glass-minus animate-pulse"></i>
+    </div>
+    <h5 class="text-sm font-bold text-gray-700 dark:text-gray-200">
+      {{ 'SUGGESTED_FRIENDS.EMPTY.TITLE' | translate }}
+    </h5>
+    <p class="text-xs text-gray-400 dark:text-gray-400 mt-1 max-w-xs leading-relaxed">
+      @if (searchControl.value?.trim()) {
+        {{ 'SUGGESTED_FRIENDS.EMPTY.DESCRIPTION' | translate: { query: searchControl.value } }}
+      } @else {
+        {{ 'SUGGESTED_FRIENDS.EMPTY.NO_SUGGESTIONS' | translate }}
+      }
+    </p>
+  </div>
+}

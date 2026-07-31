@@ -1,0 +1,100 @@
+<!-- login , register , forget -->
+<section class="p-4">
+  <div class="container grid lg:grid-cols-7 grid-cols-4 items-center min-h-screen lg:gap-20 gap-5 justify-center">
+    <div class="space-y-6 dark:bg-transparent lg:col-span-4 col-span-4 w-full">
+      <h1
+        class="text-center md:text-start bg-linear-to-br from-primary via-secondary to-accent bg-clip-text text-transparent text-5xl font-extrabold"
+      >
+        Route Posts
+      </h1>
+      <p class="dark:text-gray-200 text-center md:text-start">
+        Connect with friends and the world around you on
+        <span
+          class="bg-linear-to-l from-primary via-secondary to-accent bg-clip-text text-transparent font-bold"
+          >Route Posts</span
+        >
+      </p>
+      <div class="bg-linear-to-l from-primary to-accent p-1 rounded-3xl">
+        <div class="form space-y-2 dark:bg-dark">
+          <h3
+            class="bg-linear-to-l from-primary via-secondary to-accent bg-clip-text text-transparent font-bold"
+          >
+            ABOUT ROUTE ACADEMY
+          </h3>
+          <h2 class="text-black dark:text-gray-200 font-bold">
+            Egypt's Landing IT Training Center Since 2012
+          </h2>
+          <p class="dark:text-gray-200">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus harum provident quia
+            deleniti porro ullam accusantium nihil? Quae illo sint vitae. Quos nesciunt inventore
+            blanditiis magni ullam sunt rem! Rem, odit harum doloremque facilis voluptatum
+            perferendis nulla. Nam, nulla nemo.
+          </p>
+          <div class="grid grid-cols-3 gap-2 md:text-lg lg:text-xl">
+            <div class="form p-2 space-y-0.5 dark:bg-transparent text-center sm:text-start">
+              <h4
+                class="bg-linear-to-l from-primary via-secondary to-accent bg-clip-text text-transparent font-bold text-xl md:text-2xl"
+              >
+                2012
+              </h4>
+              <p class="text-gray-600 dark:text-gray-200 text-[11px]">FOUNDED</p>
+            </div>
+            <div class="form p-3 space-y-0.5 dark:bg-transparent text-center sm:text-start">
+              <h4
+                class="bg-linear-to-l from-primary via-secondary to-accent bg-clip-text text-transparent font-bold text-xl md:text-2xl"
+              >
+                40k+
+              </h4>
+              <p class="text-gray-600 dark:text-gray-200 text-[11px]">GRADUATES</p>
+            </div>
+            <div class="form p-3 space-y-0.5 dark:bg-transparent text-center sm:text-start">
+              <h4
+                class="bg-linear-to-l from-primary via-secondary to-accent bg-clip-text text-transparent font-bold text-xl md:text-2xl"
+              >
+                50+
+              </h4>
+              <p class="text-gray-600 dark:text-gray-200 text-[11px]">PARTNER COMPANIES</p>
+            </div>
+            <div class="form p-3 space-y-0.5 dark:bg-transparent text-center sm:text-start">
+              <h4
+                class="bg-linear-to-l from-primary via-secondary to-accent bg-clip-text text-transparent font-bold text-xl md:text-2xl"
+              >
+                5
+              </h4>
+              <p class="text-gray-600 dark:text-gray-200 text-[11px]">BRANCHES</p>
+            </div>
+            <div class="form p-3 space-y-0.5 dark:bg-transparent text-center sm:text-start">
+              <h4
+                class="bg-linear-to-l from-primary via-secondary to-accent bg-clip-text text-transparent font-bold text-xl md:text-2xl"
+              >
+                20
+              </h4>
+              <p class="text-gray-600 dark:text-gray-200 text-[11px]">DIPLOMAS AVAILABLE</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-linear-to-br lg:col-span-3 col-span-4 w-full p-1 from-primary via-secondary to-accent rounded-3xl">
+      <div class="form dark:bg-dark">
+        <div class="flex items-center gap-2 p-1 bg-blue-100 justify-center rounded-2xl">
+          <div
+            class="w-full text-gray-600 p-3 font-bold cursor-pointer text-center"
+            routerLinkActive="bg-white rounded-2xl text-primary"
+            routerLink="login"
+          >
+            <button class="cursor-pointer">Login</button>
+          </div>
+          <div
+            class="w-full text-gray-600 p-3 font-bold cursor-pointer text-center"
+            routerLinkActive="bg-white rounded-2xl text-primary"
+            routerLink="register"
+          >
+            <button class="cursor-pointer">Register</button>
+          </div>
+        </div>
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</section>

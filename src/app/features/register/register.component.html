@@ -1,0 +1,375 @@
+<div class="space-y-4">
+  <!----- Header ----->
+  <div class="space-y-1.5">
+    <h2
+      class="bg-linear-to-l from-primary via-secondary to-accent bg-clip-text text-transparent font-extrabold text-4xl"
+    >
+      {{ 'REGISTER.TITLE' | translate }}
+    </h2>
+    <p class="text-gray-500 font-semibold dark:text-white">
+      {{ 'REGISTER.SUBTITLE' | translate }}
+    </p>
+  </div>
+
+  <form [formGroup]="registerForm" (ngSubmit)="submitForm()" class="space-y-4" novalidate>
+    <!----- Full Name Input ----->
+    <div class="flex flex-col gap-1 font-semibold">
+      <label for="fullName" class="sr-only">{{ 'REGISTER.NAME.LABEL' | translate }}</label>
+      <input
+        id="fullName"
+        type="text"
+        autocomplete="name"
+        formControlName="name"
+        [placeholder]="'REGISTER.NAME.PLACEHOLDER' | translate"
+        [attr.aria-invalid]="registerForm.get('name')?.invalid && registerForm.get('name')?.touched"
+        [attr.aria-describedby]="
+          registerForm.get('name')?.invalid && registerForm.get('name')?.touched
+            ? 'name-error'
+            : null
+        "
+        [class]="{
+          'border-green-700': registerForm.get('name')?.valid,
+          'border-red-700': registerForm.get('name')?.invalid && registerForm.get('name')?.touched,
+        }"
+        class="input dark:text-gray-100"
+      />
+    </div>
+
+    <!----- Full Name Alert ----->
+    @if (registerForm.get('name')?.invalid && registerForm.get('name')?.touched) {
+      <div
+        id="name-error"
+        class="flex p-4 mb-4 text-sm text-fg-danger-strong rounded-base bg-danger-soft border border-danger-subtle"
+        role="alert"
+      >
+        <span class="sr-only">{{ 'COMMON.DANGER' | translate }}</span>
+        <div>
+          <ul class="mt-2 list-disc list-outside space-y-1 ps-2.5">
+            @if (registerForm.get('name')?.hasError('required')) {
+              <li>{{ 'REGISTER.NAME.REQUIRED' | translate }}</li>
+            } @else if (registerForm.get('name')?.hasError('minlength')) {
+              <li>{{ 'REGISTER.NAME.MINLENGTH' | translate }}</li>
+            }
+          </ul>
+        </div>
+      </div>
+    }
+
+    <!----- Username Input ----->
+    <div class="flex flex-col gap-1 font-semibold">
+      <label for="username" class="sr-only">{{ 'REGISTER.USERNAME.LABEL' | translate }}</label>
+      <input
+        id="username"
+        type="text"
+        autocomplete="username"
+        formControlName="username"
+        [placeholder]="'REGISTER.USERNAME.PLACEHOLDER' | translate"
+        [attr.aria-invalid]="
+          registerForm.get('username')?.invalid && registerForm.get('username')?.touched
+        "
+        [attr.aria-describedby]="
+          registerForm.get('username')?.invalid && registerForm.get('username')?.touched
+            ? 'username-error'
+            : null
+        "
+        class="input"
+      />
+    </div>
+
+    <!----- Username Alert ----->
+    @if (registerForm.get('username')?.invalid && registerForm.get('username')?.touched) {
+      <div
+        id="username-error"
+        class="flex p-4 mb-4 text-sm text-fg-danger-strong rounded-base bg-danger-soft border border-danger-subtle"
+        role="alert"
+      >
+        <span class="sr-only">{{ 'COMMON.DANGER' | translate }}</span>
+        <div>
+          <ul class="mt-2 list-disc list-outside space-y-1 ps-2.5">
+            <li>{{ 'REGISTER.USERNAME.INVALID' | translate }}</li>
+          </ul>
+        </div>
+      </div>
+    }
+
+    <!----- Email Input ----->
+    <div class="flex flex-col gap-1 font-semibold">
+      <label for="email" class="sr-only">{{ 'REGISTER.EMAIL.LABEL' | translate }}</label>
+      <input
+        id="email"
+        type="email"
+        autocomplete="email"
+        formControlName="email"
+        [placeholder]="'REGISTER.EMAIL.PLACEHOLDER' | translate"
+        [attr.aria-invalid]="
+          registerForm.get('email')?.invalid && registerForm.get('email')?.touched
+        "
+        [attr.aria-describedby]="
+          registerForm.get('email')?.invalid && registerForm.get('email')?.touched
+            ? 'email-error'
+            : null
+        "
+        [class]="{
+          'border-green-700': registerForm.get('email')?.valid,
+          'border-red-700':
+            registerForm.get('email')?.invalid && registerForm.get('email')?.touched,
+        }"
+        class="input"
+      />
+    </div>
+
+    <!----- Email Alert ----->
+    @if (registerForm.get('email')?.invalid && registerForm.get('email')?.touched) {
+      <div
+        id="email-error"
+        class="flex p-4 mb-4 text-sm text-fg-danger-strong rounded-base bg-danger-soft border border-danger-subtle"
+        role="alert"
+      >
+        <span class="sr-only">{{ 'COMMON.DANGER' | translate }}</span>
+        <div>
+          <ul class="mt-2 list-disc list-outside space-y-1 ps-2.5">
+            @if (registerForm.get('email')?.hasError('required')) {
+              <li>{{ 'REGISTER.EMAIL.REQUIRED' | translate }}</li>
+            }
+            @if (registerForm.get('email')?.hasError('email')) {
+              <li>{{ 'REGISTER.EMAIL.INVALID' | translate }}</li>
+            }
+          </ul>
+        </div>
+      </div>
+    }
+
+    <!----- Gender Input ----->
+    <div class="flex flex-col gap-1 font-semibold">
+      <label for="gender" class="sr-only">{{ 'REGISTER.GENDER.LABEL' | translate }}</label>
+      <select
+        id="gender"
+        name="gender"
+        formControlName="gender"
+        [attr.aria-invalid]="
+          registerForm.get('gender')?.invalid && registerForm.get('gender')?.touched
+        "
+        [attr.aria-describedby]="
+          registerForm.get('gender')?.invalid && registerForm.get('gender')?.touched
+            ? 'gender-error'
+            : null
+        "
+        [class]="{
+          'border-green-700': registerForm.get('gender')?.valid,
+          'border-red-700':
+            registerForm.get('gender')?.invalid && registerForm.get('gender')?.touched,
+        }"
+        class="input cursor-pointer"
+      >
+        <option class="option" value="" disabled selected hidden>
+          {{ 'REGISTER.GENDER.PLACEHOLDER' | translate }}
+        </option>
+        <option class="option" value="male">{{ 'REGISTER.GENDER.MALE' | translate }}</option>
+        <option class="option" value="female">{{ 'REGISTER.GENDER.FEMALE' | translate }}</option>
+      </select>
+    </div>
+
+    <!----- Gender Alert ----->
+    @if (registerForm.get('gender')?.invalid && registerForm.get('gender')?.touched) {
+      <div
+        id="gender-error"
+        class="flex p-4 mb-4 text-sm text-fg-danger-strong rounded-base bg-danger-soft border border-danger-subtle"
+        role="alert"
+      >
+        <span class="sr-only">{{ 'COMMON.DANGER' | translate }}</span>
+        <div>
+          <ul class="mt-2 list-disc list-outside space-y-1 ps-2.5">
+            <li>{{ 'REGISTER.GENDER.REQUIRED' | translate }}</li>
+          </ul>
+        </div>
+      </div>
+    }
+
+    <!----- Birthdate Input ----->
+    <div class="flex flex-col gap-1 font-semibold">
+      <label for="dateOfBirth" class="sr-only">{{ 'REGISTER.DOB.LABEL' | translate }}</label>
+      <input
+        id="dateOfBirth"
+        type="date"
+        autocomplete="bday"
+        formControlName="dateOfBirth"
+        [attr.aria-invalid]="
+          registerForm.get('dateOfBirth')?.invalid && registerForm.get('dateOfBirth')?.touched
+        "
+        [attr.aria-describedby]="
+          registerForm.get('dateOfBirth')?.invalid && registerForm.get('dateOfBirth')?.touched
+            ? 'dob-error'
+            : null
+        "
+        [class]="{
+          'border-green-700': registerForm.get('dateOfBirth')?.valid,
+          'border-red-700':
+            registerForm.get('dateOfBirth')?.invalid && registerForm.get('dateOfBirth')?.touched,
+        }"
+        class="input"
+      />
+    </div>
+
+    <!----- Birthdate Alert ----->
+    @if (registerForm.get('dateOfBirth')?.invalid && registerForm.get('dateOfBirth')?.touched) {
+      <div
+        id="dob-error"
+        class="flex p-4 mb-4 text-sm text-fg-danger-strong rounded-base bg-danger-soft border border-danger-subtle"
+        role="alert"
+      >
+        <span class="sr-only">{{ 'COMMON.DANGER' | translate }}</span>
+        <div>
+          <ul class="mt-2 list-disc list-outside space-y-1 ps-2.5">
+            <li>{{ 'REGISTER.DOB.REQUIRED' | translate }}</li>
+          </ul>
+        </div>
+      </div>
+    }
+
+    <!----- Password Input ----->
+    <div class="flex flex-col gap-1 font-semibold relative">
+      <label for="password" class="sr-only">{{ 'REGISTER.PASSWORD.LABEL' | translate }}</label>
+      <input
+        #pass
+        id="password"
+        type="password"
+        autocomplete="new-password"
+        formControlName="password"
+        [placeholder]="'REGISTER.PASSWORD.PLACEHOLDER' | translate"
+        [attr.aria-invalid]="
+          registerForm.get('password')?.invalid && registerForm.get('password')?.touched
+        "
+        [attr.aria-describedby]="
+          registerForm.get('password')?.invalid && registerForm.get('password')?.touched
+            ? 'password-error'
+            : null
+        "
+        [class]="{
+          'border-green-700': registerForm.get('password')?.valid,
+          'border-red-700':
+            registerForm.get('password')?.invalid && registerForm.get('password')?.touched,
+        }"
+        class="input"
+      />
+      <button
+        type="button"
+        (click)="showPassword(pass)"
+        [attr.aria-label]="
+          (pass.type === 'password' ? 'REGISTER.PASSWORD.SHOW' : 'REGISTER.PASSWORD.HIDE')
+            | translate
+        "
+        class="absolute top-1/2 end-4 text-accent -translate-y-1/2 cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary rounded p-1"
+      >
+        <i
+          [class]="pass.type === 'password' ? 'fa-eye-slash' : 'fa-eye'"
+          class="fas"
+          aria-hidden="true"
+        ></i>
+      </button>
+    </div>
+
+    <!----- Password Alert ----->
+    @if (registerForm.get('password')?.invalid && registerForm.get('password')?.touched) {
+      <div
+        id="password-error"
+        class="flex p-4 mb-4 text-sm text-fg-danger-strong rounded-base bg-danger-soft border border-danger-subtle"
+        role="alert"
+      >
+        <span class="sr-only">{{ 'COMMON.DANGER' | translate }}</span>
+        <div>
+          <ul class="mt-2 list-disc list-outside space-y-1 ps-2.5">
+            @if (registerForm.get('password')?.hasError('required')) {
+              <li>{{ 'REGISTER.PASSWORD.REQUIRED' | translate }}</li>
+            }
+            @if (registerForm.get('password')?.hasError('pattern')) {
+              <li>{{ 'REGISTER.PASSWORD.PATTERN' | translate }}</li>
+            }
+          </ul>
+        </div>
+      </div>
+    }
+
+    <!----- Confirm Password Input ----->
+    <div class="flex flex-col gap-1 font-semibold relative">
+      <label for="rePassword" class="sr-only">{{
+        'REGISTER.CONFIRM_PASSWORD.LABEL' | translate
+      }}</label>
+      <input
+        #rePass
+        id="rePassword"
+        type="password"
+        autocomplete="new-password"
+        formControlName="rePassword"
+        [placeholder]="'REGISTER.CONFIRM_PASSWORD.PLACEHOLDER' | translate"
+        [attr.aria-invalid]="
+          registerForm.get('rePassword')?.invalid && registerForm.get('rePassword')?.touched
+        "
+        [attr.aria-describedby]="
+          registerForm.get('rePassword')?.invalid && registerForm.get('rePassword')?.touched
+            ? 'repassword-error'
+            : null
+        "
+        [class]="{
+          'border-green-700': registerForm.get('rePassword')?.valid,
+          'border-red-700':
+            registerForm.get('rePassword')?.invalid && registerForm.get('rePassword')?.touched,
+        }"
+        class="input"
+      />
+      <button
+        type="button"
+        (click)="showRePassword(rePass)"
+        [attr.aria-label]="
+          (rePass.type === 'password'
+            ? 'REGISTER.CONFIRM_PASSWORD.SHOW'
+            : 'REGISTER.CONFIRM_PASSWORD.HIDE'
+          ) | translate
+        "
+        class="absolute top-1/2 end-4 text-accent -translate-y-1/2 cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary rounded p-1"
+      >
+        <i
+          [class]="rePass.type === 'password' ? 'fa-eye-slash' : 'fa-eye'"
+          class="fas"
+          aria-hidden="true"
+        ></i>
+      </button>
+    </div>
+
+    <!----- Confirm Password Alert ----->
+    @if (registerForm.get('rePassword')?.invalid && registerForm.get('rePassword')?.touched) {
+      <div
+        id="repassword-error"
+        class="flex p-4 mb-4 text-sm text-fg-danger-strong rounded-base bg-danger-soft border border-danger-subtle"
+        role="alert"
+      >
+        <span class="sr-only">{{ 'COMMON.DANGER' | translate }}</span>
+        <div>
+          <ul class="mt-2 list-disc list-outside space-y-1 ps-2.5">
+            @if (registerForm.get('rePassword')?.hasError('required')) {
+              <li>{{ 'REGISTER.CONFIRM_PASSWORD.REQUIRED' | translate }}</li>
+            }
+            @if (registerForm.get('rePassword')?.hasError('mismatch')) {
+              <li>{{ 'REGISTER.CONFIRM_PASSWORD.MISMATCH' | translate }}</li>
+            }
+          </ul>
+        </div>
+      </div>
+    }
+
+    <!----- Submit Btn ----->
+    <button
+      [disabled]="loading"
+      type="submit"
+      class="disabled:bg-gray-500 disabled:cursor-not-allowed disabled:hover:translate-y-0 main-btn w-full bg-linear-to-r from-primary to-secondary hover:-translate-y-0.5 transition-all duration-300 font-bold"
+    >
+      {{ 'REGISTER.SUBMIT' | translate }}
+      @if (loading) {
+        <i class="fas fa-spinner fa-spin mx-2" aria-hidden="true"></i>
+      }
+    </button>
+
+    @if (msgError) {
+      <p class="text-center text-red-800 p-2 font-bold" role="alert">{{ msgError }}</p>
+    }
+  </form>
+</div>

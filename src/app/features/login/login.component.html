@@ -1,0 +1,107 @@
+<div class="space-y-4">
+  <!----- Header ----->
+  <div class="space-y-1.5">
+    <h2
+      class="bg-linear-to-l from-primary via-secondary to-accent bg-clip-text text-transparent font-extrabold text-4xl"
+    >
+      {{ 'AUTH.LOGIN_TITLE' | translate }}
+    </h2>
+    <p class="text-gray-500 font-semibold dark:text-white">
+      {{ 'AUTH.LOGIN_SUBTITLE' | translate }}
+    </p>
+  </div>
+
+  <form [formGroup]="loginForm" (ngSubmit)="submitForm()" class="space-y-4">
+    <!----- Mail / Username Input ----->
+    <div class="flex flex-col gap-1 font-semibold">
+      <input
+        [class]="{
+          'border-green-700': loginForm.get('login')?.valid && loginForm.get('login')?.touched,
+          'border-red-700': loginForm.get('login')?.invalid && loginForm.get('login')?.touched,
+        }"
+        formControlName="login"
+        class="input dark:bg-dark-soft"
+        type="text"
+        [placeholder]="'AUTH.EMAIL_PLACEHOLDER' | translate"
+      />
+    </div>
+
+    <!----- Mail Alert ----->
+    @if (loginForm.get('login')?.invalid && loginForm.get('login')?.touched) {
+      <div
+        class="flex p-4 mb-4 text-sm text-fg-danger-strong rounded-base bg-danger-soft border border-danger-subtle"
+        role="alert"
+      >
+        <span class="sr-only">{{ 'AUTH.DANGER_SR' | translate }}</span>
+        <div>
+          <ul class="mt-2 list-disc list-outside space-y-1 ps-2.5">
+            @if (loginForm.get('login')?.hasError('required')) {
+              <li>{{ 'AUTH.ERRORS.LOGIN_REQUIRED' | translate }}</li>
+            }
+            @if (loginForm.get('login')?.hasError('minlength')) {
+              <li>{{ 'AUTH.ERRORS.LOGIN_MINLENGTH' | translate }}</li>
+            }
+          </ul>
+        </div>
+      </div>
+    }
+
+    <!----- Password Input ----->
+    <div class="flex flex-col gap-1 font-semibold">
+      <input
+        [class]="{
+          'border-green-700':
+            loginForm.get('password')?.valid && loginForm.get('password')?.touched,
+          'border-red-700':
+            loginForm.get('password')?.invalid && loginForm.get('password')?.touched,
+        }"
+        formControlName="password"
+        class="input dark:bg-dark-soft"
+        type="password"
+        [placeholder]="'AUTH.PASSWORD_PLACEHOLDER' | translate"
+      />
+    </div>
+
+    <!----- Password Alert ----->
+    @if (loginForm.get('password')?.invalid && loginForm.get('password')?.touched) {
+      <div
+        class="flex p-4 mb-4 text-sm text-fg-danger-strong rounded-base bg-danger-soft border border-danger-subtle"
+        role="alert"
+      >
+        <span class="sr-only">{{ 'AUTH.DANGER_SR' | translate }}</span>
+        <div>
+          <ul class="mt-2 list-disc list-outside space-y-1 ps-2.5">
+            @if (loginForm.get('password')?.hasError('required')) {
+              <li>{{ 'AUTH.ERRORS.PASSWORD_REQUIRED' | translate }}</li>
+            }
+            @if (loginForm.get('password')?.hasError('pattern')) {
+              <li>{{ 'AUTH.ERRORS.PASSWORD_PATTERN' | translate }}</li>
+            }
+          </ul>
+        </div>
+      </div>
+    }
+
+    <!----- Submit Button ----->
+    <button
+      [disabled]="loading"
+      type="submit"
+      class="disabled:bg-gray-500 disabled:cursor-not-allowed disabled:hover:translate-y-0 main-btn w-full bg-linear-to-r from-primary to-secondary hover:-translate-y-0.5 transition-all duration-300 font-bold cursor-pointer"
+    >
+      {{ 'AUTH.LOGIN_BTN' | translate }}
+      @if (loading) {
+        <i class="fas fa-spinner fa-spin mx-2" aria-hidden="true"></i>
+      }
+    </button>
+
+    <!----- Forget Password Button ----->
+    <button
+      type="button"
+      class="w-full bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent cursor-pointer hover:scale-110 transition-all duration-300 font-bold bg-transparent border-none"
+    >
+      {{ 'AUTH.FORGOT_PASSWORD' | translate }}
+    </button>
+
+    <p class="text-center text-red-800 p-2 font-bold">{{ msgError }}</p>
+  </form>
+</div>

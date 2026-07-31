@@ -1,0 +1,417 @@
+<!----- Create Post Section ----->
+<form
+  #form
+  (submit)="submitForm($event, form)"
+  class="form w-full bg-white dark:bg-dark mb-4 p-4 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800"
+>
+  <div class="flex items-center gap-3 mb-3">
+    <div
+      class="img w-12 h-12 bg-linear-to-r from-primary via-secondary to-accent p-0.5 rounded-full flex justify-center items-center shrink-0"
+    >
+      <img [src]="userPhoto" [alt]="userName" class="rounded-full w-full h-full object-cover" />
+    </div>
+
+    <div class="flex flex-col space-y-1">
+      <h2
+        class="bg-linear-to-r from-primary via-secondary to-accent bg-clip-text text-transparent font-extrabold text-lg"
+      >
+        {{ userName }}
+      </h2>
+      <div>
+        <div
+          class="flex p-1 w-fit items-center bg-neutral-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-sm rounded-lg shadow-xs"
+        >
+          <i
+            class="fa-solid fa-earth-americas text-[11px] text-slate-500 ms-1"
+            aria-hidden="true"
+          ></i>
+          <select
+            [formControl]="privacy"
+            [attr.aria-label]="'FEED.CREATE_POST.PRIVACY_SETTING' | translate"
+            class="border-none bg-transparent cursor-pointer ring-0 py-0 px-2 text-xs focus:outline-none dark:text-gray-200"
+          >
+            <option value="public">{{ 'FEED.CREATE_POST.PRIVACY.PUBLIC' | translate }}</option>
+            <option value="following">
+              {{ 'FEED.CREATE_POST.PRIVACY.FOLLOWERS' | translate }}
+            </option>
+            <option value="only_me">{{ 'FEED.CREATE_POST.PRIVACY.ONLY_ME' | translate }}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <textarea
+    #postContent
+    [formControl]="content"
+    id="postContent"
+    rows="3"
+    class="bg-blue-50/50 dark:bg-slate-900/50 dark:placeholder:text-gray-400 dark:text-gray-100 w-full border border-gray-200 dark:border-gray-700 rounded-xl p-3 mb-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 resize-none"
+    [placeholder]="
+      ('FEED.CREATE_POST.PLACEHOLDER' | translate).replace(
+        '{{ name }}',
+        userName ? userName.split(' ')[0] : ''
+      )
+    "
+  ></textarea>
+
+  <!-- Image Preview -->
+  @if (imgUrl) {
+    <div class="relative mb-3">
+      <img
+        [src]="imgUrl"
+        class="w-full rounded-2xl shadow max-h-72 object-cover"
+        [alt]="'FEED.CREATE_POST.IMAGE_ATTACHMENT' | translate"
+      />
+      <button
+        type="button"
+        (click)="removeImage()"
+        [attr.aria-label]="'FEED.CREATE_POST.REMOVE_IMAGE' | translate"
+        class="absolute hover:scale-110 border-2 border-accent transition-all duration-100 cursor-pointer top-3 end-3 bg-amber-50 text-accent font-bold rounded-xl w-8 h-8 flex items-center justify-center shadow-md"
+      >
+        <i class="fa-solid fa-xmark text-sm" aria-hidden="true"></i>
+      </button>
+    </div>
+  }
+
+  <div class="flex justify-between items-center border-t pt-4 dark:border-gray-800">
+    <div class="flex gap-4 items-center">
+      <label
+        for="imgFileInput"
+        class="flex hover:scale-105 transition-all duration-200 cursor-pointer items-center gap-2 text-sm font-medium"
+      >
+        <i class="fa-solid fa-photo-film text-green-500 text-lg" aria-hidden="true"></i>
+        <span class="text-gray-600 hidden sm:block dark:text-gray-300">
+          {{ 'FEED.CREATE_POST.PHOTO_VIDEO' | translate }}
+        </span>
+      </label>
+      <input
+        (change)="changeImg($event)"
+        type="file"
+        id="imgFileInput"
+        accept="image/*"
+        class="hidden"
+      />
+
+      <button
+        type="button"
+        class="flex hover:scale-105 transition-all duration-200 cursor-pointer items-center gap-2 text-sm font-medium bg-transparent border-none"
+      >
+        <i class="fa-solid fa-smile text-yellow-500 text-lg" aria-hidden="true"></i>
+        <span class="text-gray-600 hidden sm:block dark:text-gray-300">
+          {{ 'FEED.CREATE_POST.FEELING_ACTIVITY' | translate }}
+        </span>
+      </button>
+    </div>
+
+    <button
+      #sendPostBtn
+      type="submit"
+      [disabled]="!postContent.value.trim()"
+      class="disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2 py-2 px-5 bg-secondary hover:bg-secondary/90 text-white rounded-xl cursor-pointer hover:scale-105 transition-all duration-300 font-semibold text-sm shadow-sm"
+    >
+      <span>{{ 'FEED.CREATE_POST.POST_BTN' | translate }}</span>
+      <i class="fa-solid fa-paper-plane text-xs" aria-hidden="true"></i>
+    </button>
+  </div>
+</form>
+
+<!----- Posts List ----->
+@for (post of postList; track post._id) {
+  <article
+    class="form my-4 relative p-5 w-full bg-white dark:bg-dark border border-gray-100 dark:border-gray-800 rounded-2xl shadow-sm"
+  >
+    <!-- User Details Header -->
+    <div class="flex items-center justify-between mb-3">
+      <div class="flex items-center gap-3">
+        <div
+          class="img w-12 h-12 bg-linear-to-r from-primary via-secondary to-accent p-0.5 rounded-full flex justify-center items-center shrink-0"
+        >
+          <img
+            [src]="post.user?.photo"
+            [alt]="post.user?.name"
+            loading="lazy"
+            class="rounded-full w-full h-full object-cover"
+          />
+        </div>
+
+        <div class="flex flex-col">
+          <h2
+            class="bg-linear-to-r from-primary via-secondary to-accent bg-clip-text text-transparent font-extrabold text-base sm:text-lg"
+          >
+            {{ post.user?.name }}
+          </h2>
+          <div class="flex flex-wrap items-center text-xs text-slate-500 gap-1 mt-0.5">
+            <span class="hover:underline cursor-pointer font-medium"
+              >@{{ post.user?.username }}</span
+            >
+            <span>&middot;</span>
+            <span class="hover:underline cursor-pointer hidden md:inline text-gray-400">
+              {{ post.createdAt | date: 'mediumDate' }}
+            </span>
+            <span>&middot;</span>
+
+            <div
+              class="inline-flex p-0.5 items-center bg-neutral-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded"
+            >
+              <i
+                class="fa-solid fa-earth-americas text-[10px] text-slate-500 ms-1"
+                aria-hidden="true"
+              ></i>
+              <select
+                [value]="post.privacy"
+                [disabled]="post.user?._id !== userId"
+                [class.cursor-not-allowed]="post.user?._id !== userId"
+                [attr.aria-label]="'FEED.POST.PRIVACY_MODE' | translate"
+                class="border-none bg-transparent cursor-pointer ring-0 py-0 px-1 text-[11px] focus:outline-none dark:text-gray-300"
+              >
+                <option value="public">{{ 'FEED.CREATE_POST.PRIVACY.PUBLIC' | translate }}</option>
+                <option value="following">
+                  {{ 'FEED.CREATE_POST.PRIVACY.FOLLOWERS' | translate }}
+                </option>
+                <option value="only_me">
+                  {{ 'FEED.CREATE_POST.PRIVACY.ONLY_ME' | translate }}
+                </option>
+              </select>
+            </div>
+          </div>
+          <span
+            class="hover:underline cursor-pointer block md:hidden text-gray-400 text-[11px] mt-0.5"
+          >
+            {{ post.createdAt | date: 'shortDate' }}
+          </span>
+        </div>
+      </div>
+
+      <!-- Post Dropdown Options -->
+      <div class="relative group">
+        <button
+          type="button"
+          [attr.aria-label]="'FEED.POST.OPTIONS' | translate"
+          class="text-accent cursor-pointer border border-transparent hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg p-2 transition-colors focus:outline-none"
+        >
+          <svg
+            class="w-5 h-5"
+            aria-hidden="true"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2.5"
+              d="M12 6h.01M12 12h.01M12 18h.01"
+            />
+          </svg>
+        </button>
+
+        <!-- Dropdown menu -->
+        <div
+          class="z-30 hidden end-0 group-hover:block transition-all duration-200 absolute bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg w-44 overflow-hidden"
+        >
+          <ul class="py-1 text-sm font-medium">
+            <li>
+              <button
+                type="button"
+                (click)="savePost(post)"
+                class="flex w-full items-center gap-2 px-3 py-2 text-start text-sm font-semibold text-slate-700 dark:text-gray-200 hover:bg-slate-50 dark:hover:bg-gray-700 transition-colors cursor-pointer"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="15"
+                  height="15"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-bookmark"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M17 3a2 2 0 0 1 2 2v15a1 1 0 0 1-1.496.868l-4.512-2.578a2 2 0 0 0-1.984 0l-4.512 2.578A1 1 0 0 1 5 20V5a2 2 0 0 1 2-2z"
+                  ></path>
+                </svg>
+                <span>{{
+                  (post.bookmarked ? 'FEED.POST.UNSAVE' : 'FEED.POST.SAVE') | translate
+                }}</span>
+              </button>
+            </li>
+
+            @if (post.user?._id === userId) {
+              <li>
+                <button
+                  type="button"
+                  (click)="setDataToUpdate(); postId = post._id"
+                  class="flex w-full items-center gap-2 px-3 py-2 text-start text-sm font-semibold text-slate-700 dark:text-gray-200 hover:bg-slate-50 dark:hover:bg-gray-700 transition-colors cursor-pointer"
+                >
+                  <i class="fa-solid fa-pen-to-square text-xs" aria-hidden="true"></i>
+                  <span>{{ 'FEED.POST.EDIT' | translate }}</span>
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  (click)="deletePost(post._id)"
+                  class="flex w-full items-center gap-2 px-3 py-2 text-start text-sm font-semibold text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors cursor-pointer"
+                >
+                  <i class="fa-solid fa-trash text-xs" aria-hidden="true"></i>
+                  <span>{{ 'FEED.POST.DELETE' | translate }}</span>
+                </button>
+              </li>
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Post Content Body -->
+    <div class="mb-3">
+      @if (post.body && isUpdating === false) {
+        <p
+          [routerLink]="['/main/details', post._id]"
+          class="text-gray-900 text-sm font-medium dark:text-gray-100 cursor-pointer whitespace-pre-line leading-relaxed"
+        >
+          {{ post.body }}
+        </p>
+      }
+
+      @if (isUpdating === true && postId === post._id) {
+        <div class="mt-2 space-y-2">
+          <textarea
+            #updateTextArea
+            [formControl]="updateContent"
+            rows="3"
+            class="bg-blue-50/50 dark:bg-slate-900/50 dark:text-gray-100 w-full border border-gray-300 dark:border-gray-700 rounded-xl p-3 text-sm focus:outline-none focus:ring-2 focus:ring-accent"
+            [placeholder]="post.body || ''"
+          ></textarea>
+          <div class="flex justify-end items-center gap-2">
+            <button
+              type="button"
+              (click)="cancelUpdate(); updateTextArea.value = ''"
+              class="rounded-xl cursor-pointer bg-amber-50 dark:bg-amber-950/30 border border-accent text-accent text-xs font-semibold px-4 py-1.5 hover:bg-amber-100 transition-colors"
+            >
+              {{ 'FEED.POST.CANCEL' | translate }}
+            </button>
+            <button
+              type="button"
+              (click)="updatePost(post._id); updateTextArea.value = ''"
+              class="rounded-xl cursor-pointer bg-accent text-white text-xs font-semibold px-4 py-1.5 hover:bg-accent/90 transition-colors shadow-xs"
+            >
+              {{ 'FEED.POST.UPDATE' | translate }}
+            </button>
+          </div>
+        </div>
+      }
+
+      @if (post.image) {
+        <img
+          [routerLink]="['/main/details', post._id]"
+          class="w-full max-h-96 object-cover rounded-xl shadow-xs mt-3 cursor-pointer"
+          [src]="post.image"
+          loading="lazy"
+          [alt]="'FEED.CREATE_POST.IMAGE_ATTACHMENT' | translate"
+        />
+      }
+    </div>
+
+    <!-- Counters & View Details -->
+    <div
+      class="flex font-normal justify-between items-center border-b border-gray-200 dark:border-gray-800 pb-3 px-1 text-xs sm:text-sm"
+    >
+      <div class="flex items-center text-gray-600 dark:text-gray-300 font-semibold gap-1.5">
+        <i class="fa-solid fa-heart text-secondary text-xs" aria-hidden="true"></i>
+        <span>{{ post.likesCount }} {{ 'FEED.POST.LIKES' | translate }}</span>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <div class="flex items-center text-gray-500 dark:text-gray-400 gap-1 font-semibold">
+          <i class="fa-solid fa-share hidden sm:inline text-xs" aria-hidden="true"></i>
+          <span>{{ post.sharesCount }} {{ 'FEED.POST.SHARES' | translate }}</span>
+        </div>
+        <div class="flex items-center text-gray-500 dark:text-gray-400 gap-1 font-semibold">
+          <span>{{ post.commentsCount }} {{ 'FEED.POST.COMMENTS' | translate }}</span>
+        </div>
+
+        <!-- View Details Link Container -->
+        <div class="text-primary hover:text-accent transition-colors font-semibold cursor-pointer">
+          <a [routerLink]="['/main/details', post._id]" class="hidden sm:inline">{{
+            'FEED.POST.VIEW_DETAILS' | translate
+          }}</a>
+          <a [routerLink]="['/main/details', post._id]" class="sm:hidden inline">{{
+            'FEED.POST.MORE' | translate
+          }}</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Action Buttons (Like / Comment / Share) -->
+    <div class="grid grid-cols-3 w-full pt-1">
+      @if (post.likes?.includes(userId)) {
+        <button
+          type="button"
+          (click)="
+            likePost(post._id);
+            post.likes &&
+              post.likes.includes(userId) &&
+              post.likes.splice(post.likes.indexOf(userId), 1);
+            post.likesCount = post.likesCount - 1
+          "
+          class="flex cursor-pointer text-secondary transition-colors font-bold items-center gap-2 justify-center py-2.5 text-sm hover:bg-red-50/50 dark:hover:bg-red-950/20 rounded-lg"
+        >
+          <i class="fa-solid fa-heart" aria-hidden="true"></i>
+          <span>{{ 'FEED.POST.LIKED' | translate }}</span>
+        </button>
+      } @else {
+        <button
+          type="button"
+          (click)="
+            likePost(post._id);
+            post.likes && post.likes.push(userId);
+            post.likesCount = post.likesCount + 1
+          "
+          class="flex cursor-pointer hover:text-secondary transition-colors font-bold dark:text-gray-300 text-gray-600 items-center gap-2 justify-center py-2.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg"
+        >
+          <i class="fa-regular fa-heart" aria-hidden="true"></i>
+          <span>{{ 'FEED.POST.LIKE' | translate }}</span>
+        </button>
+      }
+
+      <button
+        #viewComents
+        type="button"
+        class="flex cursor-pointer hover:text-secondary transition-colors font-bold dark:text-gray-300 text-gray-600 items-center justify-center py-2.5 gap-2 text-sm hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg"
+      >
+        <i class="fa-solid fa-comment" aria-hidden="true"></i>
+        <span>{{ 'FEED.POST.COMMENT' | translate }}</span>
+      </button>
+
+      @if (!post.isShare) {
+        <button
+          type="button"
+          (click)="sharePost(post)"
+          class="flex cursor-pointer hover:text-secondary transition-colors font-bold dark:text-gray-300 text-gray-600 items-center gap-2 justify-center py-2.5 text-sm hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg"
+        >
+          <i class="fa-solid fa-share-nodes" aria-hidden="true"></i>
+          <span>{{ 'FEED.POST.SHARE' | translate }}</span>
+        </button>
+      } @else {
+        <div class="flex text-secondary font-bold items-center gap-2 justify-center py-2.5 text-sm">
+          <i class="fa-solid fa-share-nodes" aria-hidden="true"></i>
+          <span>{{ 'FEED.POST.SHARED' | translate }}</span>
+        </div>
+      }
+    </div>
+  </article>
+
+  <!-- Comments Deferred Component -->
+  @defer (on interaction(viewComents)) {
+    <app-post-comments [postId]="post._id"></app-post-comments>
+  }
+}
+
+<div class="p-8 pt-10 text-sm font-semibold text-center text-gray-400 dark:text-gray-500">
+  {{ 'FEED.REACHED_END' | translate }}
+</div>

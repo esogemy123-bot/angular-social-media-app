@@ -1,0 +1,239 @@
+{
+  "AUTH": {
+    "LOGIN_TITLE": "Se connecter à Route Posts",
+    "LOGIN_SUBTITLE": "connectez-vous et continuez votre parcours social.",
+    "EMAIL_PLACEHOLDER": "e-mail ou nom d'utilisateur",
+    "PASSWORD_PLACEHOLDER": "Mot de passe",
+    "LOGIN_BTN": "Se connecter",
+    "FORGOT_PASSWORD": "Mot de passe oublié ?",
+    "DANGER_SR": "Danger",
+    "ERRORS": {
+      "LOGIN_REQUIRED": "L'e-mail ou le nom d'utilisateur est requis.",
+      "LOGIN_MINLENGTH": "Doit comporter au moins 3 caractères.",
+      "PASSWORD_REQUIRED": "Le mot de passe est requis.",
+      "PASSWORD_PATTERN": "Doit contenir au moins 8 caractères, 1 majuscule, 1 minuscule, 1 chiffre et 1 caractère spécial"
+    }
+  },
+
+  "COMMON": {
+    "DANGER": "Danger"
+  },
+  "REGISTER": {
+    "TITLE": "Créer un nouveau compte",
+    "SUBTITLE": "C'est rapide et facile.",
+    "NAME": {
+      "LABEL": "Nom complet",
+      "PLACEHOLDER": "Nom complet",
+      "REQUIRED": "Le nom complet est requis.",
+      "MINLENGTH": "Le nom doit comporter au moins 3 caractères."
+    },
+    "USERNAME": {
+      "LABEL": "Nom d'utilisateur",
+      "PLACEHOLDER": "Nom d'utilisateur (facultatif)",
+      "INVALID": "Veuillez entrer un e-mail ou un nom d'utilisateur valide."
+    },
+    "EMAIL": {
+      "LABEL": "Adresse e-mail",
+      "PLACEHOLDER": "Adresse e-mail",
+      "REQUIRED": "L'e-mail est requis.",
+      "INVALID": "Veuillez entrer une adresse e-mail valide."
+    },
+    "GENDER": {
+      "LABEL": "Sélectionner le genre",
+      "PLACEHOLDER": "Sélectionner le genre",
+      "MALE": "Homme",
+      "FEMALE": "Femme",
+      "REQUIRED": "Veuillez sélectionner votre genre."
+    },
+    "DOB": {
+      "LABEL": "Date de naissance",
+      "REQUIRED": "La date de naissance est requise."
+    },
+    "PASSWORD": {
+      "LABEL": "Mot de passe",
+      "PLACEHOLDER": "Mot de passe",
+      "SHOW": "Afficher le mot de passe",
+      "HIDE": "Masquer le mot de passe",
+      "REQUIRED": "Le mot de passe est requis.",
+      "PATTERN": "Doit contenir au moins 8 caractères, 1 majuscule, 1 minuscule, 1 chiffre et 1 caractère spécial."
+    },
+    "CONFIRM_PASSWORD": {
+      "LABEL": "Confirmer le mot de passe",
+      "PLACEHOLDER": "Confirmer le mot de passe",
+      "SHOW": "Afficher le mot de passe",
+      "HIDE": "Masquer le mot de passe",
+      "REQUIRED": "Veuillez confirmer votre mot de passe.",
+      "MISMATCH": "Les mots de passe ne correspondent pas."
+    },
+    "SUBMIT": "Créer un nouveau compte"
+  },
+  "PROFILE": {
+    "MEMBER_TAG": "Membre de Route Posts",
+    "FOLLOWING_BTN": "Abonné(e)",
+    "FOLLOW_BTN": "S'abonner",
+    "FOLLOWERS": "ABONNÉS",
+    "FOLLOWING": "ABONNEMENTS",
+    "BOOKMARKS": "SIGNETS",
+    "ABOUT": "À propos",
+    "ACTIVE_STATUS": "Actif sur Route Posts",
+    "MY_POSTS_TITLE": "MES PUBLICATIONS",
+    "SAVED_POSTS_TITLE": "PUBLICATIONS ENREGISTRÉES",
+    "TAB_MY_POSTS": "Mes publications",
+    "TAB_SAVED_POSTS": "Publications enregistrées"
+  },
+  "POSTS": {
+    "VIEW_DETAILS": "Voir les détails",
+    "MORE": "Plus",
+    "LIKES": "j'aime",
+    "SHARES": "partages",
+    "COMMENTS": "commentaires",
+    "NO_POSTS_OWN": "Vous n'avez publié aucun post.",
+    "NO_POSTS_OTHER": "Il n'y a pas encore de publication."
+  },
+  "SAVED_POSTS": {
+    "VIEW_DETAILS": "Voir les détails",
+    "MORE": "Plus",
+    "LIKES": "j'aime",
+    "SHARES": "partages",
+    "COMMENTS": "commentaires",
+    "NO_SAVED_POSTS": "Aucune publication enregistrée pour le moment.",
+    "USER_PHOTO": "Photo de l'utilisateur",
+    "VIEW_IMAGE_FULL": "Afficher l'image en taille réelle",
+    "ATTACHED_IMAGE": "Image jointe",
+    "IMAGE_MODAL": "Fenêtre de l'image",
+    "CLOSE_MODAL": "Fermer la fenêtre"
+  },
+  "NOTIFICATIONS": {
+    "TITLE": "Notifications",
+    "SUBTITLE": "Suivez vos dernières alertes et activités",
+    "MARK_ALL_READ": "Tout marquer comme lu",
+    "ALL": "Tous",
+    "UNREAD": "Non lus",
+    "FILTER_ALL": "Afficher toutes les notifications",
+    "FILTER_UNREAD": "Afficher les notifications non lues",
+    "NOTIFICATION_FROM": "Notification de",
+    "USER_PHOTO": "Photo de l'utilisateur",
+    "UNREAD_ITEM": "Élément non lu",
+    "UNAVAILABLE": "Ce contenu n'est pas disponible",
+    "READ": "Lu",
+    "MARK_READ": "Marquer comme lu",
+    "EMPTY": "Aucune notification pour le moment",
+    "TYPES": {
+      "LIKE_POST": "a aimé votre publication",
+      "COMMENT_POST": "a commenté votre publication",
+      "FOLLOW_USER": "a commencé à vous suivre",
+      "SHARE_POST": "a partagé votre publication",
+      "DEFAULT": "a interagi avec vous"
+    }
+  },
+  "NAVBAR": {
+    "BRAND": "Route Posts",
+    "FEED": "Fil d'actualité",
+    "PROFILE": "Profil",
+    "NOTIFICATIONS": "Notifications",
+    "CUSTOMIZE_FONT": "Personnaliser la police",
+    "CUSTOMIZE_THEME": "Personnaliser la couleur du thème",
+    "DEFAULT_FONT": "Police par défaut",
+    "SETTINGS": "Paramètres",
+    "DARK_MODE": "Mode sombre",
+    "LIGHT_MODE": "Mode clair",
+    "LOG_OUT": "Se déconnecter",
+    "SELECT_FONT": "Sélectionner le type de police",
+    "CHANGE_LANG_BTN": "Changer de langue"
+  },
+  "FEED": {
+    "CREATE_POST": {
+      "PLACEHOLDER": "À quoi pensez-vous, {{ name }} ?",
+      "PRIVACY": {
+        "PUBLIC": "public",
+        "FOLLOWERS": "abonnés",
+        "ONLY_ME": "moi uniquement"
+      },
+      "PHOTO_VIDEO": "Photo/Vidéo",
+      "FEELING_ACTIVITY": "Humeur/Activité",
+      "POST_BTN": "Publier"
+    },
+    "POST": {
+      "POSTED_IN": "le",
+      "SAVE": "Enregistrer la publication",
+      "UNSAVE": "Ne plus enregistrer la publication",
+      "EDIT": "Modifier la publication",
+      "DELETE": "Supprimer la publication",
+      "CANCEL": "annuler",
+      "UPDATE": "mettre à jour",
+      "LIKES": "j'aime",
+      "SHARES": "partages",
+      "COMMENTS": "commentaires",
+      "VIEW_DETAILS": "Voir les détails",
+      "MORE": "Plus",
+      "LIKE": "J'aime",
+      "LIKED": "Aimé",
+      "COMMENT": "Commenter",
+      "SHARE": "Partager",
+      "SHARED": "Partagé"
+    },
+    "REACHED_END": "Vous avez atteint la fin"
+  },
+  "CHANGE_PASSWORD": {
+    "TITLE": "Changer le mot de passe",
+    "SUBTITLE": "Protégez votre compte en utilisant un mot de passe fort.",
+    "CURRENT_PASSWORD": {
+      "LABEL_PREFIX": "Mot de passe",
+      "LABEL_SUFFIX": "actuel",
+      "PLACEHOLDER": "Entrez le mot de passe actuel",
+      "REQUIRED": "Le mot de passe actuel est requis."
+    },
+    "NEW_PASSWORD": {
+      "LABEL_PREFIX": "Nouveau",
+      "LABEL_SUFFIX": "mot de passe",
+      "PLACEHOLDER": "Entrez le nouveau mot de passe",
+      "REQUIRED": "Le nouveau mot de passe est requis.",
+      "PATTERN": "Doit contenir au moins 8 caractères, 1 majuscule, 1 minuscule, 1 chiffre et 1 caractère spécial"
+    },
+    "CONFIRM_PASSWORD": {
+      "LABEL_PREFIX": "Confirmer le nouveau",
+      "LABEL_SUFFIX": "mot de passe",
+      "PLACEHOLDER": "Répétez le nouveau mot de passe",
+      "REQUIRED": "Veuillez confirmer votre mot de passe.",
+      "MISMATCH": "Les mots de passe ne correspondent pas."
+    },
+    "BUTTON": {
+      "SUBMIT": "Mettre à jour le mot de passe",
+      "UPDATING": "Mise à jour..."
+    }
+  },
+  "SUGGESTED_FRIENDS": {
+    "TITLE": "Amis suggérés",
+    "SEARCH_PLACEHOLDER": "Rechercher des amis",
+    "FOLLOWERS_COUNT": "{{ count }} abonnés",
+    "FOLLOWING": "Abonné",
+    "FOLLOW": "Suivre",
+    "EMPTY": {
+      "TITLE": "Aucun ami trouvé",
+      "DESCRIPTION": "Nous n'avons trouvé personne correspondant à \"{{ query }}\". Vérifiez l'orthographe !",
+      "NO_SUGGESTIONS": "Aucune suggestion d'ami disponible pour le moment."
+    }
+  },
+  "FEED_NAVIGATION": {
+    "FEED": "Fil d'actualité",
+    "MY_POSTS": "Mes publications",
+    "COMMUNITY": "Communauté",
+    "SAVED": "Enregistrés"
+  },
+  "COMMENTS": {
+    "TITLE": "Commentaires",
+    "PLACEHOLDER": "Commenter en tant que ...",
+    "PHOTO_VIDEO": "Photo/vidéo",
+    "CANCEL": "annuler",
+    "UPDATE": "mettre à jour",
+    "LIKES": "J'aime :",
+    "REPLIES": "Réponses :"
+  },
+  "REPLIES": {
+    "VIEW": "Afficher les réponses",
+    "HIDE": "Masquer les réponses",
+    "LIKES": "J'aime :",
+    "PLACEHOLDER": "Écrire une réponse...",
+    "ATTACH_PHOTO": "Joindre une photo"
+  }
+}

@@ -1,0 +1,241 @@
+{
+  "AUTH": {
+    "LOGIN_TITLE": "Accedi a Route Posts",
+    "LOGIN_SUBTITLE": "accedi e continua il tuo percorso social.",
+    "EMAIL_PLACEHOLDER": "email o nome utente",
+    "PASSWORD_PLACEHOLDER": "Password",
+    "LOGIN_BTN": "Accedi",
+    "FORGOT_PASSWORD": "Password dimenticata?",
+    "DANGER_SR": "Pericolo",
+    "ERRORS": {
+      "LOGIN_REQUIRED": "L'email o il nome utente è obbligatorio.",
+      "LOGIN_MINLENGTH": "Deve contenere almeno 3 caratteri.",
+      "PASSWORD_REQUIRED": "La password è obbligatoria.",
+      "PASSWORD_PATTERN": "Deve contenere almeno 8 caratteri, 1 maiuscola, 1 minuscola, 1 numero e 1 carattere speciale"
+    }
+  },
+
+  "COMMON": {
+    "DANGER": "Pericolo"
+  },
+  "REGISTER": {
+    "TITLE": "Crea un nuovo account",
+    "SUBTITLE": "È veloce e semplice.",
+    "NAME": {
+      "LABEL": "Nome completo",
+      "PLACEHOLDER": "Nome completo",
+      "REQUIRED": "Il nome completo è obbligatorio.",
+      "MINLENGTH": "Il nome deve contenere almeno 3 caratteri."
+    },
+    "USERNAME": {
+      "LABEL": "Nome utente",
+      "PLACEHOLDER": "Nome utente (facoltativo)",
+      "INVALID": "Inserisci un'email o un nome utente valido."
+    },
+    "EMAIL": {
+      "LABEL": "Indirizzo email",
+      "PLACEHOLDER": "Indirizzo email",
+      "REQUIRED": "L'email è obbligatoria.",
+      "INVALID": "Inserisci un indirizzo email valido."
+    },
+    "GENDER": {
+      "LABEL": "Seleziona genere",
+      "PLACEHOLDER": "Seleziona genere",
+      "MALE": "Maschio",
+      "FEMALE": "Femmina",
+      "REQUIRED": "Seleziona il tuo genere."
+    },
+    "DOB": {
+      "LABEL": "Data di nascita",
+      "REQUIRED": "La data di nascita è obbligatoria."
+    },
+    "PASSWORD": {
+      "LABEL": "Password",
+      "PLACEHOLDER": "Password",
+      "SHOW": "Mostra password",
+      "HIDE": "Nascondi password",
+      "REQUIRED": "La password è obbligatoria.",
+      "PATTERN": "Deve contenere almeno 8 caratteri, 1 maiuscola, 1 minuscola, 1 numero e 1 carattere speciale."
+    },
+    "CONFIRM_PASSWORD": {
+      "LABEL": "Conferma password",
+      "PLACEHOLDER": "Conferma password",
+      "SHOW": "Mostra password",
+      "HIDE": "Nascondi password",
+      "REQUIRED": "Conferma la password.",
+      "MISMATCH": "Le password non coincidono."
+    },
+    "SUBMIT": "Crea un nuovo account"
+  },
+  "PROFILE": {
+    "MEMBER_TAG": "Membro di Route Posts",
+    "FOLLOWING_BTN": "Segui già",
+    "FOLLOW_BTN": "Segui",
+    "FOLLOWERS": "FOLLOWER",
+    "FOLLOWING": "SEGUITI",
+    "BOOKMARKS": "SEGNALIBRI",
+    "ABOUT": "Informazioni",
+    "ACTIVE_STATUS": "Attivo su Route Posts",
+    "MY_POSTS_TITLE": "I MIEI POST",
+    "SAVED_POSTS_TITLE": "POST SALVATI",
+    "TAB_MY_POSTS": "I miei post",
+    "TAB_SAVED_POSTS": "Post salvati"
+  },
+
+  "POSTS": {
+    "VIEW_DETAILS": "Visualizza dettagli",
+    "MORE": "Altro",
+    "LIKES": "mi piace",
+    "SHARES": "condivisioni",
+    "COMMENTS": "commenti",
+    "NO_POSTS_OWN": "Non hai condiviso alcun post.",
+    "NO_POSTS_OTHER": "Non ci sono ancora post."
+  },
+  "SAVED_POSTS": {
+    "VIEW_DETAILS": "Vedi dettagli",
+    "MORE": "Altro",
+    "LIKES": "mi piace",
+    "SHARES": "condivisioni",
+    "COMMENTS": "commenti",
+    "NO_SAVED_POSTS": "Nessun post salvato finora.",
+    "USER_PHOTO": "Foto utente",
+    "VIEW_IMAGE_FULL": "Visualizza immagine intera",
+    "ATTACHED_IMAGE": "Immagine allegata",
+    "IMAGE_MODAL": "Finestra immagine",
+    "CLOSE_MODAL": "Chiudi finestra"
+  },
+
+  "NOTIFICATIONS": {
+    "TITLE": "Notifiche",
+    "SUBTITLE": "Tieni traccia dei tuoi ultimi avvisi e attività",
+    "MARK_ALL_READ": "Segna tutti come letti",
+    "ALL": "Tutti",
+    "UNREAD": "Non letti",
+    "FILTER_ALL": "Visualizza tutte le notifiche",
+    "FILTER_UNREAD": "Visualizza le notifiche non lette",
+    "NOTIFICATION_FROM": "Notifica da",
+    "USER_PHOTO": "Foto utente",
+    "UNREAD_ITEM": "Elemento non letto",
+    "UNAVAILABLE": "Questo contenuto non è disponibile",
+    "READ": "Letto",
+    "MARK_READ": "Segna come letto",
+    "EMPTY": "Nessuna notifica finora",
+    "TYPES": {
+      "LIKE_POST": "ha messo mi piace al tuo post",
+      "COMMENT_POST": "ha commentato il tuo post",
+      "FOLLOW_USER": "ha iniziato a seguirti",
+      "SHARE_POST": "ha condiviso il tuo post",
+      "DEFAULT": "ha interagito con te"
+    }
+  },
+  "NAVBAR": {
+    "BRAND": "Route Posts",
+    "FEED": "Feed",
+    "PROFILE": "Profilo",
+    "NOTIFICATIONS": "Notifiche",
+    "CUSTOMIZE_FONT": "Personalizza carattere",
+    "CUSTOMIZE_THEME": "Personalizza colore tema",
+    "DEFAULT_FONT": "Carattere predefinito",
+    "SETTINGS": "Impostazioni",
+    "DARK_MODE": "Modalità scura",
+    "LIGHT_MODE": "Modalità chiara",
+    "LOG_OUT": "Disconnettiti",
+    "SELECT_FONT": "Seleziona tipo di carattere",
+    "CHANGE_LANG_BTN": "Cambia lingua"
+  },
+  "FEED": {
+    "CREATE_POST": {
+      "PLACEHOLDER": "A cosa stai pensando, {{ name }}?",
+      "PRIVACY": {
+        "PUBLIC": "pubblico",
+        "FOLLOWERS": "follower",
+        "ONLY_ME": "solo io"
+      },
+      "PHOTO_VIDEO": "Foto/Video",
+      "FEELING_ACTIVITY": "Stato d'animo/Attività",
+      "POST_BTN": "Pubblica"
+    },
+    "POST": {
+      "POSTED_IN": "il",
+      "SAVE": "Salva post",
+      "UNSAVE": "Rimuovi dai salvati",
+      "EDIT": "Modifica post",
+      "DELETE": "Elimina post",
+      "CANCEL": "annulla",
+      "UPDATE": "aggiorna",
+      "LIKES": "mi piace",
+      "SHARES": "condivisioni",
+      "COMMENTS": "commenti",
+      "VIEW_DETAILS": "Visualizza dettagli",
+      "MORE": "Altro",
+      "LIKE": "Mi piace",
+      "LIKED": "Ti piace",
+      "COMMENT": "Commenta",
+      "SHARE": "Condividi",
+      "SHARED": "Condiviso"
+    },
+    "REACHED_END": "Hai raggiunto la fine"
+  },
+  "CHANGE_PASSWORD": {
+    "TITLE": "Modifica password",
+    "SUBTITLE": "Mantieni il tuo account al sicuro usando una password efficace.",
+    "CURRENT_PASSWORD": {
+      "LABEL_PREFIX": "Password",
+      "LABEL_SUFFIX": "attuale",
+      "PLACEHOLDER": "Inserisci la password attuale",
+      "REQUIRED": "La password attuale è obbligatoria."
+    },
+    "NEW_PASSWORD": {
+      "LABEL_PREFIX": "Nuova",
+      "LABEL_SUFFIX": "password",
+      "PLACEHOLDER": "Inserisci la nuova password",
+      "REQUIRED": "La nuova password è obbligatoria.",
+      "PATTERN": "Deve contenere almeno 8 caratteri, 1 maiuscola, 1 minuscola, 1 numero e 1 carattere speciale"
+    },
+    "CONFIRM_PASSWORD": {
+      "LABEL_PREFIX": "Conferma nuova",
+      "LABEL_SUFFIX": "password",
+      "PLACEHOLDER": "Reinserisci la nuova password",
+      "REQUIRED": "Conferma la tua password.",
+      "MISMATCH": "Le password non corrispondono."
+    },
+    "BUTTON": {
+      "SUBMIT": "Aggiorna password",
+      "UPDATING": "Aggiornamento in corso..."
+    }
+  },
+  "SUGGESTED_FRIENDS": {
+    "TITLE": "Amici suggeriti",
+    "SEARCH_PLACEHOLDER": "Cerca amici",
+    "FOLLOWERS_COUNT": "{{ count }} follower",
+    "FOLLOWING": "Seguito",
+    "FOLLOW": "Segui",
+    "EMPTY": {
+      "TITLE": "Nessun amico trovato",
+      "DESCRIPTION": "Non abbiamo trovato nessuno che corrisponda a \"{{ query }}\". Controlla l'ortografia!",
+      "NO_SUGGESTIONS": "Nessun suggerimento di amicizia disponibile al momento."
+    }
+  },
+  "FEED_NAVIGATION": {
+    "FEED": "Feed",
+    "MY_POSTS": "I miei post",
+    "COMMUNITY": "Community",
+    "SAVED": "Salvati"
+  },
+  "COMMENTS": {
+    "TITLE": "Commenti",
+    "PLACEHOLDER": "Commenta come ...",
+    "PHOTO_VIDEO": "Foto/video",
+    "CANCEL": "annulla",
+    "UPDATE": "aggiorna",
+    "LIKES": "Mi piace:",
+    "REPLIES": "Risposte:"
+  },
+  "REPLIES": {
+    "VIEW": "Visualizza risposte",
+    "HIDE": "Nascondi risposte",
+    "LIKES": "Mi piace:",
+    "PLACEHOLDER": "Scrivi una risposta...",
+    "ATTACH_PHOTO": "Allega foto"
+  }
+}

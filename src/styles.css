@@ -1,0 +1,178 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;700&family=Cairo:wght@300;400;600;700&family=Tajawal:wght@300;400;500;700&display=swap');
+@import 'tailwindcss';
+@import 'flowbite/src/themes/default';
+@plugin "flowbite/plugin";
+@source "../node_modules/flowbite";
+@custom-variant dark (&:where(.dark, .dark *));
+@import 'ngx-toastr/toastr';
+
+@utility container {
+  margin-inline: auto;
+}
+.font-alexandria {
+  font-family: 'Alexandria', sans-serif !important;
+}
+
+.font-tajawal {
+  font-family: 'Tajawal', sans-serif !important;
+}
+
+.font-cairo {
+  font-family: 'Cairo', sans-serif !important;
+}
+@layer components {
+  .input {
+    @apply border-gray-300 border-[1.6px] rounded-xl placeholder-gray-400 text-gray-400 dark:placeholder-gray-100 p-2.5 focus:border-primary dark:bg-dark-soft dark:text-gray-100;
+  }
+  .label {
+    @apply text-gray-700 font-semibold cursor-pointer;
+  }
+  .form {
+    @apply p-7 bg-white rounded-3xl shadow-gray-300 shadow-md space-y-5;
+  }
+  .main-btn {
+    @apply bg-blue-400 text-white font-medium rounded-2xl text-center p-2 cursor-pointer;
+  }
+  .option {
+    @apply bg-primary text-gray-100;
+  }
+}
+
+body {
+  background-color: var(--color-secondColor);
+  /* font-family: 'SN Pro', sans-serif;
+  background-color: oklch(27.8% 0.033 256.848);
+  color: oklch(37.3% 0.034 259.733); */
+}
+/* border-e-fg-brand-subtle */
+
+@layer theme {
+  :root,
+  :host {
+    --font-sans:
+      ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+      'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-serif: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+    --font-mono:
+      ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
+      monospace;
+    --tw-ring-inset: transparent;
+    --color-brand: transparent;
+    --color-red-400: oklch(70.4% 0.191 22.216);
+    --color-red-500: oklch(63.7% 0.237 25.331);
+    --color-red-600: oklch(57.7% 0.245 27.325);
+    /* --color-red-400: oklch(81.814% 0.18784 159.118); */
+    --color-orange-400: oklch(75% 0.183 55.934);
+    --color-orange-500: oklch(70.5% 0.213 47.604);
+    --color-amber-500: oklch(76.9% 0.188 70.08);
+    --color-yellow-400: oklch(85.2% 0.199 91.936);
+    --color-yellow-500: oklch(79.5% 0.184 86.047);
+    --color-green-400: oklch(79.2% 0.209 151.711);
+    --color-green-500: oklch(72.3% 0.219 149.579);
+    --color-emerald-400: oklch(76.5% 0.177 163.223);
+    --color-emerald-500: oklch(69.6% 0.17 162.48);
+    --color-emerald-600: oklch(59.6% 0.145 163.225);
+    --color-blue-400: oklch(70.7% 0.165 254.624);
+    --color-blue-500: oklch(62.3% 0.214 259.815);
+    --color-indigo-400: oklch(67.3% 0.182 276.935);
+    --color-purple-400: oklch(71.4% 0.203 305.504);
+    --color-slate-50: oklch(98.4% 0.003 247.858);
+    --color-slate-100: oklch(96.8% 0.007 247.896);
+    --color-slate-200: oklch(92.9% 0.013 255.508);
+    --color-slate-300: oklch(86.9% 0.022 252.894);
+    --color-slate-400: oklch(70.4% 0.04 256.788);
+    --color-slate-500: oklch(55.4% 0.046 257.417);
+    --color-slate-600: oklch(44.6% 0.043 257.281);
+    --color-slate-700: oklch(37.2% 0.044 257.287);
+    --color-slate-800: oklch(27.9% 0.041 260.031);
+    --color-slate-900: oklch(20.8% 0.042 265.755);
+    --color-slate-950: oklch(12.9% 0.042 264.695);
+    --color-gray-200: oklch(92.8% 0.006 264.531);
+    --color-black: #000;
+    --color-white: #fff;
+    --spacing: 0.25rem;
+    --container-md: 28rem;
+    --container-xl: 36rem;
+    --container-2xl: 42rem;
+    --container-7xl: 80rem;
+    --text-xs: 0.75rem;
+    --text-xs--line-height: calc(1/0.75);
+    --text-sm: 0.875rem;
+    --text-sm--line-height: calc(1.25/0.875);
+    --text-base: 1rem;
+    --text-base--line-height: 1.5;
+    --text-lg: 1.125rem;
+    --text-lg--line-height: calc(1.75/1.125);
+    --text-xl: 1.25rem;
+    --text-xl--line-height: calc(1.75/1.25);
+    --text-2xl: 1.5rem;
+    --text-2xl--line-height: calc(2/1.5);
+    --text-3xl: 1.875rem;
+    --text-3xl--line-height: 1.2;
+    --text-4xl: 2.25rem;
+    --text-4xl--line-height: calc(2.5/2.25);
+    --text-5xl: 3rem;
+    --text-5xl--line-height: 1;
+    --text-6xl: 3.75rem;
+    --text-6xl--line-height: 1;
+    --text-7xl: 4.5rem;
+    --text-7xl--line-height: 1;
+    --text-8xl: 6rem;
+    --text-8xl--line-height: 1;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-black: 900;
+    --tracking-wider: 0.05em;
+    --leading-tight: 1.25;
+    --leading-relaxed: 1.625;
+    --radius-lg: 0.5rem;
+    --radius-xl: 0.75rem;
+    --radius-2xl: 1rem;
+    --radius-3xl: 1.5rem;
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --animate-spin: spin 1s linear infinite;
+    --animate-ping: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+    --animate-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    --animate-bounce: bounce 1s infinite;
+    --blur-sm: 8px;
+    --blur-md: 12px;
+    --blur-xl: 24px;
+    --blur-3xl: 64px;
+    --default-transition-duration: 0.15s;
+    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    --default-font-family: var(--font-sans);
+    --default-mono-font-family: var(--font-mono);
+    /* --color-primary: #6366f1;
+        --color-secondary: #8b5cf6;
+        --color-accent: #4b48ec; */
+    --color-primary: var(--color-blue-400);
+    --color-secondary: var(--color-indigo-400);
+    --color-accent: var(--color-blue-500);
+  }
+}
+
+@theme {
+  --color-mainColor: #00298d;
+  --color-secondColor: #f0f2f5;
+  --color-brand: #d1d5dc;
+  --color-primary: var(--color-blue-400);
+  --color-secondary: var(--color-indigo-400);
+  --color-accent: var(--color-blue-500);
+  --font-mainFont: var(--font-tajwal);
+  --color-dark-soft: oklch(27.8% 0.033 256.848);
+}
+
+/* @layer theme {
+    :root,
+    :host {
+        --color-primary: oklch(76.5% .177 163.223) ;
+        --color-secondary: oklch(69.6% .17 162.48) ;
+        --color-accent: oklch(59.6% .145 163.225) ;
+    }
+} */
+
+* {
+  /* margin-bottom: 0; */
+}

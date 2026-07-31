@@ -1,0 +1,241 @@
+{
+  "AUTH": {
+    "LOGIN_TITLE": "Anmelden bei Route Posts",
+    "LOGIN_SUBTITLE": "Melden Sie sich an und setzen Sie Ihre soziale Reise fort.",
+    "EMAIL_PLACEHOLDER": "E-Mail oder Benutzername",
+    "PASSWORD_PLACEHOLDER": "Passwort",
+    "LOGIN_BTN": "Anmelden",
+    "FORGOT_PASSWORD": "Passwort vergessen?",
+    "DANGER_SR": "Gefahr",
+    "ERRORS": {
+      "LOGIN_REQUIRED": "E-Mail oder Benutzername ist erforderlich.",
+      "LOGIN_MINLENGTH": "Muss mindestens 3 Zeichen lang sein.",
+      "PASSWORD_REQUIRED": "Passwort ist erforderlich.",
+      "PASSWORD_PATTERN": "Muss mindestens 8 Zeichen, 1 Großbuchstaben, 1 Kleinbuchstaben, 1 Zahl und 1 Sonderzeichen enthalten"
+    }
+  },
+
+  "COMMON": {
+    "DANGER": "Gefahr"
+  },
+  "REGISTER": {
+    "TITLE": "Neues Konto erstellen",
+    "SUBTITLE": "Es ist schnell und einfach.",
+    "NAME": {
+      "LABEL": "Vollständiger Name",
+      "PLACEHOLDER": "Vollständiger Name",
+      "REQUIRED": "Vollständiger Name ist erforderlich.",
+      "MINLENGTH": "Der Name muss mindestens 3 Zeichen lang sein."
+    },
+    "USERNAME": {
+      "LABEL": "Benutzername",
+      "PLACEHOLDER": "Benutzername (optional)",
+      "INVALID": "Bitte geben Sie eine gültige E-Mail oder einen Benutzernamen ein."
+    },
+    "EMAIL": {
+      "LABEL": "E-Mail-Adresse",
+      "PLACEHOLDER": "E-Mail-Adresse",
+      "REQUIRED": "E-Mail ist erforderlich.",
+      "INVALID": "Bitte geben Sie eine gültige E-Mail-Adresse ein."
+    },
+    "GENDER": {
+      "LABEL": "Geschlecht auswählen",
+      "PLACEHOLDER": "Geschlecht auswählen",
+      "MALE": "Männlich",
+      "FEMALE": "Weiblich",
+      "REQUIRED": "Bitte wählen Sie Ihr Geschlecht aus."
+    },
+    "DOB": {
+      "LABEL": "Geburtsdatum",
+      "REQUIRED": "Geburtsdatum ist erforderlich."
+    },
+    "PASSWORD": {
+      "LABEL": "Passwort",
+      "PLACEHOLDER": "Passwort",
+      "SHOW": "Passwort anzeigen",
+      "HIDE": "Passwort ausblenden",
+      "REQUIRED": "Passwort ist erforderlich.",
+      "PATTERN": "Muss mindestens 8 Zeichen, 1 Großbuchstaben, 1 Kleinbuchstaben, 1 Zahl und 1 Sonderzeichen enthalten."
+    },
+    "CONFIRM_PASSWORD": {
+      "LABEL": "Passwort bestätigen",
+      "PLACEHOLDER": "Passwort bestätigen",
+      "SHOW": "Passwort anzeigen",
+      "HIDE": "Passwort ausblenden",
+      "REQUIRED": "Bitte bestätigen Sie Ihr Passwort.",
+      "MISMATCH": "Passwörter stimmen nicht überein."
+    },
+    "SUBMIT": "Neues Konto erstellen"
+  },
+  "PROFILE": {
+    "MEMBER_TAG": "Mitglied bei Route Posts",
+    "FOLLOWING_BTN": "Gefolgt",
+    "FOLLOW_BTN": "Folgen",
+    "FOLLOWERS": "FOLLOWER",
+    "FOLLOWING": "FOLGT",
+    "BOOKMARKS": "LESEZEICHEN",
+    "ABOUT": "Über mich",
+    "ACTIVE_STATUS": "Aktiv auf Route Posts",
+    "MY_POSTS_TITLE": "MEINE BEITRÄGE",
+    "SAVED_POSTS_TITLE": "GESPEICHERTE BEITRÄGE",
+    "TAB_MY_POSTS": "Meine Beiträge",
+    "TAB_SAVED_POSTS": "Gespeicherte Beiträge"
+  },
+  "POSTS": {
+    "VIEW_DETAILS": "Details anzeigen",
+    "MORE": "Mehr",
+    "LIKES": "Gefällt mir",
+    "SHARES": "Geteilt",
+    "COMMENTS": "Kommentare",
+    "NO_POSTS_OWN": "Du hast noch keine Beiträge geteilt.",
+    "NO_POSTS_OTHER": "Es gibt noch keine Beiträge."
+  },
+  "SAVED_POSTS": {
+    "VIEW_DETAILS": "Details anzeigen",
+    "MORE": "Mehr",
+    "LIKES": "Gefällt mir-Angaben",
+    "SHARES": "Geteilt",
+    "COMMENTS": "Kommentare",
+    "NO_SAVED_POSTS": "Noch keine gespeicherten Beiträge.",
+    "USER_PHOTO": "Benutzerfoto",
+    "VIEW_IMAGE_FULL": "Vollständiges Bild anzeigen",
+    "ATTACHED_IMAGE": "Angehängtes Bild",
+    "IMAGE_MODAL": "Bildanzeige-Fenster",
+    "CLOSE_MODAL": "Fenster schließen"
+  },
+
+  "NOTIFICATIONS": {
+    "TITLE": "Benachrichtigungen",
+    "SUBTITLE": "Behalte deine neuesten Benachrichtigungen und Aktivitäten im Blick",
+    "MARK_ALL_READ": "Alle als gelesen markieren",
+    "ALL": "Alle",
+    "UNREAD": "Ungelesen",
+    "FILTER_ALL": "Alle Benachrichtigungen anzeigen",
+    "FILTER_UNREAD": "Ungelesene Benachrichtigungen anzeigen",
+    "NOTIFICATION_FROM": "Benachrichtigung von",
+    "USER_PHOTO": "Benutzerfoto",
+    "UNREAD_ITEM": "Ungelesenes Element",
+    "UNAVAILABLE": "Dieser Inhalt ist nicht verfügbar",
+    "READ": "Gelesen",
+    "MARK_READ": "Als gelesen markieren",
+    "EMPTY": "Noch keine Benachrichtigungen",
+    "TYPES": {
+      "LIKE_POST": "gefällt dein Beitrag",
+      "COMMENT_POST": "hat deinen Beitrag kommentiert",
+      "FOLLOW_USER": "ist dir gefolgt",
+      "SHARE_POST": "hat deinen Beitrag geteilt",
+      "DEFAULT": "hat mit dir interagiert"
+    }
+  },
+  "NAVBAR": {
+    "BRAND": "Route Posts",
+    "FEED": "Feed",
+    "PROFILE": "Profil",
+    "NOTIFICATIONS": "Benachrichtigungen",
+    "CUSTOMIZE_FONT": "Schriftart anpassen",
+    "CUSTOMIZE_THEME": "Design-Farbe anpassen",
+    "DEFAULT_FONT": "Standard-Schriftart",
+    "SETTINGS": "Einstellungen",
+    "DARK_MODE": "Dunkelmodus",
+    "LIGHT_MODE": "Hellmodus",
+    "LOG_OUT": "Abmelden",
+    "SELECT_FONT": "Schriftart auswählen",
+    "CHANGE_LANG_BTN": "Sprache ändern"
+  },
+  "FEED": {
+    "CREATE_POST": {
+      "PLACEHOLDER": "Was geht dir durch den Kopf, {{ name }}?",
+      "PRIVACY": {
+        "PUBLIC": "öffentlich",
+        "FOLLOWERS": "Follower",
+        "ONLY_ME": "nur ich"
+      },
+      "PHOTO_VIDEO": "Foto/Video",
+      "FEELING_ACTIVITY": "Gefühl/Aktivität",
+      "POST_BTN": "Beitrag"
+    },
+    "POST": {
+      "POSTED_IN": "am",
+      "SAVE": "Beitrag speichern",
+      "UNSAVE": "Beitrag nicht mehr speichern",
+      "EDIT": "Beitrag bearbeiten",
+      "DELETE": "Beitrag löschen",
+      "CANCEL": "abbrechen",
+      "UPDATE": "aktualisieren",
+      "LIKES": "Gefällt mir",
+      "SHARES": "Geteilte Inhalte",
+      "COMMENTS": "Kommentare",
+      "VIEW_DETAILS": "Details anzeigen",
+      "MORE": "Mehr",
+      "LIKE": "Gefällt mir",
+      "LIKED": "Gefällt mir",
+      "COMMENT": "Kommentieren",
+      "SHARE": "Teilen",
+      "SHARED": "Geteilt"
+    },
+    "REACHED_END": "Du hast das Ende erreicht"
+  },
+  "CHANGE_PASSWORD": {
+    "TITLE": "Passwort ändern",
+    "SUBTITLE": "Schütze dein Konto durch ein starkes Passwort.",
+    "CURRENT_PASSWORD": {
+      "LABEL_PREFIX": "Aktuelles",
+      "LABEL_SUFFIX": "Passwort",
+      "PLACEHOLDER": "Aktuelles Passwort eingeben",
+      "REQUIRED": "Aktuelles Passwort ist erforderlich."
+    },
+    "NEW_PASSWORD": {
+      "LABEL_PREFIX": "Neues",
+      "LABEL_SUFFIX": "Passwort",
+      "PLACEHOLDER": "Neues Passwort eingeben",
+      "REQUIRED": "Neues Passwort ist erforderlich.",
+      "PATTERN": "Muss mindestens 8 Zeichen, 1 Großbuchstaben, 1 Kleinbuchstaben, 1 Zahl und 1 Sonderzeichen enthalten"
+    },
+    "CONFIRM_PASSWORD": {
+      "LABEL_PREFIX": "Neues Passwort",
+      "LABEL_SUFFIX": "bestätigen",
+      "PLACEHOLDER": "Neues Passwort erneut eingeben",
+      "REQUIRED": "Bitte bestätige dein Passwort.",
+      "MISMATCH": "Passwörter stimmen nicht überein."
+    },
+    "BUTTON": {
+      "SUBMIT": "Passwort aktualisieren",
+      "UPDATING": "Wird aktualisiert..."
+    }
+  },
+  "SUGGESTED_FRIENDS": {
+    "TITLE": "Empfohlene Freunde",
+    "SEARCH_PLACEHOLDER": "Freunde suchen",
+    "FOLLOWERS_COUNT": "{{ count }} Follower",
+    "FOLLOWING": "Gefolgt",
+    "FOLLOW": "Folgen",
+    "EMPTY": {
+      "TITLE": "Keine Freunde gefunden",
+      "DESCRIPTION": "Wir konnten niemanden finden, der \"{{ query }}\" entspricht. Bitte überprüfe die Schreibweise!",
+      "NO_SUGGESTIONS": "Gerade sind keine Freundschaftsvorschläge verfügbar."
+    }
+  },
+  "FEED_NAVIGATION": {
+    "FEED": "Feed",
+    "MY_POSTS": "Meine Beiträge",
+    "COMMUNITY": "Community",
+    "SAVED": "Gespeichert"
+  },
+
+  "COMMENTS": {
+    "TITLE": "Kommentare",
+    "PLACEHOLDER": "Kommentieren als ...",
+    "PHOTO_VIDEO": "Foto/Video",
+    "CANCEL": "abbrechen",
+    "UPDATE": "aktualisieren",
+    "LIKES": "Gefällt mir:",
+    "REPLIES": "Antworten:"
+  },
+  "REPLIES": {
+    "VIEW": "Antworten anzeigen",
+    "HIDE": "Antworten ausblenden",
+    "LIKES": "Gefällt mir:",
+    "PLACEHOLDER": "Schreibe eine Antwort...",
+    "ATTACH_PHOTO": "Foto anhängen"
+  }
+}

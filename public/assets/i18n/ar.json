@@ -1,0 +1,240 @@
+{
+  "AUTH": {
+    "LOGIN_TITLE": "تسجيل الدخول إلى منشورات روت",
+    "LOGIN_SUBTITLE": "سجل الدخول وتابع رحلتك الاجتماعية.",
+    "EMAIL_PLACEHOLDER": "البريد الإلكتروني أو اسم المستخدم",
+    "PASSWORD_PLACEHOLDER": "كلمة المرور",
+    "LOGIN_BTN": "تسجيل الدخول",
+    "FORGOT_PASSWORD": "هل نسيت كلمة المرور؟",
+    "DANGER_SR": "خطر",
+    "ERRORS": {
+      "LOGIN_REQUIRED": "البريد الإلكتروني أو اسم المستخدم مطلوب.",
+      "LOGIN_MINLENGTH": "يجب ألا يقل عن 3 أحرف.",
+      "PASSWORD_REQUIRED": "كلمة المرور مطلوبة.",
+      "PASSWORD_PATTERN": "يجب أن تحتوي على 8 أحرف على الأقل، حرف كبير، حرف صغير، رقم، ورمز خاص"
+    }
+  },
+
+  "COMMON": {
+    "DANGER": "خطر"
+  },
+  "REGISTER": {
+    "TITLE": "إنشاء حساب جديد",
+    "SUBTITLE": "الأمر سريع وسهل.",
+    "NAME": {
+      "LABEL": "الاسم الكامل",
+      "PLACEHOLDER": "الاسم الكامل",
+      "REQUIRED": "الاسم الكامل مطلوب.",
+      "MINLENGTH": "يجب ألا يقل الاسم عن 3 أحرف."
+    },
+    "USERNAME": {
+      "LABEL": "اسم المستخدم",
+      "PLACEHOLDER": "اسم المستخدم (اختياري)",
+      "INVALID": "يرجى إدخال بريد إلكتروني أو اسم مستخدم صالح."
+    },
+    "EMAIL": {
+      "LABEL": "عنوان البريد الإلكتروني",
+      "PLACEHOLDER": "عنوان البريد الإلكتروني",
+      "REQUIRED": "البريد الإلكتروني مطلوب.",
+      "INVALID": "يرجى إدخال عنوان بريد إلكتروني صالح."
+    },
+    "GENDER": {
+      "LABEL": "اختر النوع",
+      "PLACEHOLDER": "اختر النوع",
+      "MALE": "ذكر",
+      "FEMALE": "أنثى",
+      "REQUIRED": "يرجى اختيار النوع."
+    },
+    "DOB": {
+      "LABEL": "تاريخ الميلاد",
+      "REQUIRED": "تاريخ الميلاد مطلوب."
+    },
+    "PASSWORD": {
+      "LABEL": "كلمة المرور",
+      "PLACEHOLDER": "كلمة المرور",
+      "SHOW": "إظهار كلمة المرور",
+      "HIDE": "إخفاء كلمة المرور",
+      "REQUIRED": "كلمة المرور مطلوبة.",
+      "PATTERN": "يجب أن تحتوي على 8 أحرف على الأقل، حرف كبير، حرف صغير، رقم، ورمز خاص."
+    },
+    "CONFIRM_PASSWORD": {
+      "LABEL": "تأكيد كلمة المرور",
+      "PLACEHOLDER": "تأكيد كلمة المرور",
+      "SHOW": "إظهار كلمة المرور",
+      "HIDE": "إخفاء كلمة المرور",
+      "REQUIRED": "يرجى تأكيد كلمة المرور.",
+      "MISMATCH": "كلمتا المرور غير متطابقتين."
+    },
+    "SUBMIT": "إنشاء حساب جديد"
+  },
+  "PROFILE": {
+    "MEMBER_TAG": "عضو في Route Posts",
+    "FOLLOWING_BTN": "تتابعه",
+    "FOLLOW_BTN": "متابعة",
+    "FOLLOWERS": "المتابعون",
+    "FOLLOWING": "يتابع",
+    "BOOKMARKS": "العلامات المرجعية",
+    "ABOUT": "نبذة",
+    "ACTIVE_STATUS": "نشط على Route Posts",
+    "MY_POSTS_TITLE": "منشوراتي",
+    "SAVED_POSTS_TITLE": "المنشورات المحفوظة",
+    "TAB_MY_POSTS": "منشوراتي",
+    "TAB_SAVED_POSTS": "المنشورات المحفوظة"
+  },
+  "POSTS": {
+    "VIEW_DETAILS": "عرض التفاصيل",
+    "MORE": "المزيد",
+    "LIKES": "إعجابات",
+    "SHARES": "مشاركات",
+    "COMMENTS": "تعليقات",
+    "NO_POSTS_OWN": "لم تقم بنشر أي منشورات.",
+    "NO_POSTS_OTHER": "لا توجد منشورات حتى الآن."
+  },
+  "SAVED_POSTS": {
+    "VIEW_DETAILS": "عرض التفاصيل",
+    "MORE": "المزيد",
+    "LIKES": "إعجابات",
+    "SHARES": "مشاركات",
+    "COMMENTS": "تعليقات",
+    "NO_SAVED_POSTS": "لا توجد منشورات محفوظة حتى الآن.",
+    "USER_PHOTO": "صورة المستخدم",
+    "VIEW_IMAGE_FULL": "عرض الصورة بالكامل",
+    "ATTACHED_IMAGE": "صورة مرفقة",
+    "IMAGE_MODAL": "نافذة عرض الصورة",
+    "CLOSE_MODAL": "إغلاق النافذة"
+  },
+
+  "NOTIFICATIONS": {
+    "TITLE": "الإشعارات",
+    "SUBTITLE": "تابع أحدث التنبيهات والأنشطة الخاصة بك",
+    "MARK_ALL_READ": "تحديد الكل كمقروء",
+    "ALL": "الكل",
+    "UNREAD": "غير مقروء",
+    "FILTER_ALL": "عرض كل الإشعارات",
+    "FILTER_UNREAD": "عرض الإشعارات غير المقروءة",
+    "NOTIFICATION_FROM": "إشعار من",
+    "USER_PHOTO": "صورة المستخدم",
+    "UNREAD_ITEM": "عنصر غير مقروء",
+    "UNAVAILABLE": "هذا المحتوى غير متوفر",
+    "READ": "مقروء",
+    "MARK_READ": "تحديد كمقروء",
+    "EMPTY": "لا توجد إشعارات حتى الآن",
+    "TYPES": {
+      "LIKE_POST": "أعجب بمنشورك",
+      "COMMENT_POST": "علق على منشورك",
+      "FOLLOW_USER": "بدأ بمتابعتك",
+      "SHARE_POST": "قام بمشاركة منشورك",
+      "DEFAULT": "تفاعل معك"
+    }
+  },
+  "NAVBAR": {
+    "BRAND": "منشورات رووت",
+    "FEED": "الرئيسية",
+    "PROFILE": "الملف الشخصي",
+    "NOTIFICATIONS": "الإشعارات",
+    "CUSTOMIZE_FONT": "تخصيص الخط",
+    "CUSTOMIZE_THEME": "تخصيص لون المظهر",
+    "DEFAULT_FONT": "الخط الافتراضي",
+    "SETTINGS": "الإعدادات",
+    "DARK_MODE": "الوضع الداكن",
+    "LIGHT_MODE": "الوضع الفاتح",
+    "LOG_OUT": "تسجيل الخروج",
+    "SELECT_FONT": "اختيار نوع الخط",
+    "CHANGE_LANG_BTN": "تغيير اللغة"
+  },
+  "FEED": {
+    "CREATE_POST": {
+      "PLACEHOLDER": "بم تفكر يا {{ name }}؟",
+      "PRIVACY": {
+        "PUBLIC": "العامة",
+        "FOLLOWERS": "المتابعون",
+        "ONLY_ME": "أنا فقط"
+      },
+      "PHOTO_VIDEO": "صورة/فيديو",
+      "FEELING_ACTIVITY": "الشعور/النشاط",
+      "POST_BTN": "نشر"
+    },
+    "POST": {
+      "POSTED_IN": "في",
+      "SAVE": "حفظ المنشور",
+      "UNSAVE": "إلغاء حفظ المنشور",
+      "EDIT": "تعديل المنشور",
+      "DELETE": "حذف المنشور",
+      "CANCEL": "إلغاء",
+      "UPDATE": "تحديث",
+      "LIKES": "إعجابات",
+      "SHARES": "مشاركات",
+      "COMMENTS": "تعليقات",
+      "VIEW_DETAILS": "عرض التفاصيل",
+      "MORE": "المزيد",
+      "LIKE": "إعجاب",
+      "LIKED": "أعجبني",
+      "COMMENT": "تعليق",
+      "SHARE": "مشاركة",
+      "SHARED": "تمت المشاركة"
+    },
+    "REACHED_END": "لقد وصلت إلى النهاية"
+  },
+  "CHANGE_PASSWORD": {
+    "TITLE": "تغيير كلمة المرور",
+    "SUBTITLE": "حافظ على أمان حسابك باستخدام كلمة مرور قوية.",
+    "CURRENT_PASSWORD": {
+      "LABEL_PREFIX": "كلمة المرور",
+      "LABEL_SUFFIX": "الحالية",
+      "PLACEHOLDER": "أدخل كلمة المرور الحالية",
+      "REQUIRED": "كلمة المرور الحالية مطلوبة."
+    },
+    "NEW_PASSWORD": {
+      "LABEL_PREFIX": "كلمة المرور",
+      "LABEL_SUFFIX": "الجديدة",
+      "PLACEHOLDER": "أدخل كلمة المرور الجديدة",
+      "REQUIRED": "كلمة المرور الجديدة مطلوبة.",
+      "PATTERN": "يجب أن تحتوي على 8 أحرف على الأقل، وحرف كبير، وحرف صغير، ورقم، ورمز خاص"
+    },
+    "CONFIRM_PASSWORD": {
+      "LABEL_PREFIX": "تأكيد كلمة المرور",
+      "LABEL_SUFFIX": "الجديدة",
+      "PLACEHOLDER": "أعد إدخال كلمة المرور الجديدة",
+      "REQUIRED": "يرجى تأكيد كلمة المرور.",
+      "MISMATCH": "كلمات المرور غير متطابقة."
+    },
+    "BUTTON": {
+      "SUBMIT": "تحديث كلمة المرور",
+      "UPDATING": "جاري التحديث..."
+    }
+  },
+  "SUGGESTED_FRIENDS": {
+    "TITLE": "الأصدقاء المقترحون",
+    "SEARCH_PLACEHOLDER": "البحث عن أصدقاء",
+    "FOLLOWERS_COUNT": "{{ count }} متابِع",
+    "FOLLOWING": "تمت المتابعة",
+    "FOLLOW": "متابعة",
+    "EMPTY": {
+      "TITLE": "لم يتم العثور على أصدقاء",
+      "DESCRIPTION": "لم نتمكن من العثور على أي شخص يطابق \"{{ query }}\". يرجى التحقق من صياغة البحث!",
+      "NO_SUGGESTIONS": "لا توجد اقتراحات أصدقاء متاحة في الوقت الحالي."
+    }
+  },
+  "FEED_NAVIGATION": {
+    "FEED": "آخر الأخبار",
+    "MY_POSTS": "منشوراتي",
+    "COMMUNITY": "المجتمع",
+    "SAVED": "المحفوظات"
+  },
+  "COMMENTS": {
+    "TITLE": "التعليقات",
+    "PLACEHOLDER": "التعليق باسم ...",
+    "PHOTO_VIDEO": "صورة/فيديو",
+    "CANCEL": "إلغاء",
+    "UPDATE": "تحديث",
+    "LIKES": "الإعجابات:",
+    "REPLIES": "الردود:"
+  },
+  "REPLIES": {
+    "VIEW": "عرض الردود",
+    "HIDE": "إخفاء الردود",
+    "LIKES": "الإعجابات:",
+    "PLACEHOLDER": "اكتب ردّاً...",
+    "ATTACH_PHOTO": "إرفاق صورة"
+  }
+}

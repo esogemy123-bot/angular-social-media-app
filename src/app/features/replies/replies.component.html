@@ -1,0 +1,121 @@
+<div class="ml-9 mt-1">
+  <button
+    (click)="toggleReplies()"
+    class="text-[12px] font-semibold text-slate-500 hover:text-primary dark:text-slate-100 dark:hover:text-primary flex items-center gap-1.5 cursor-pointer transition-colors py-1 px-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/60 w-fit"
+  >
+    <i
+      class="fa-solid text-[10px] transition-transform duration-200"
+      [class.fa-arrow-turn-down]="!showReplies"
+      [class.fa-chevron-up]="showReplies"
+      aria-hidden="true"
+    ></i>
+
+    @if (!showReplies) {
+      <span>{{ 'REPLIES.VIEW' | translate }}</span>
+    } @else {
+      <span>{{ 'REPLIES.HIDE' | translate }}</span>
+    }
+  </button>
+</div>
+
+@if (showReplies) {
+  <div class="ml-8 mt-2 space-y-3">
+    @for (reply of replies; track reply._id) {
+      <div
+        class="flex gap-2 items-start bg-slate-50 dark:bg-dark p-2.5 rounded-2xl border border-slate-100 dark:border-slate-800"
+      >
+        <img
+          [src]="reply.commentCreator.photo"
+          [alt]="reply.commentCreator.name"
+          class="w-7 h-7 rounded-full object-cover shrink-0 mt-0.5 bg-slate-100"
+        />
+
+        <div class="flex-1 min-w-0">
+          <div class="flex items-center gap-2 mb-0.5">
+            <span
+              class="text-[12px] font-bold text-slate-900 dark:text-gray-100 hover:underline cursor-pointer"
+            >
+              {{ reply.commentCreator?.name }}
+            </span>
+            <span class="text-[11px] text-slate-400">
+              &middot; {{ reply.createdAt | date: 'short' }}
+            </span>
+          </div>
+
+          @if (reply.content) {
+            <p class="text-[13px] text-slate-800 dark:text-gray-200 wrap-break-word">
+              {{ reply.content }}
+            </p>
+          }
+
+          @if (reply.image) {
+            <img
+              [src]="reply.image"
+              alt="Reply attachment"
+              class="mt-2 rounded-xl max-h-48 object-cover w-full"
+            />
+          }
+        </div>
+        <button
+          [class.text-accent]="reply.likes.includes(user._id)"
+          [class.dark:text-gray-50]="!reply.likes.includes(user._id)"
+          (click)="toggleLikeReply(reply)"
+          class="cursor-pointer hover:underline text-xl"
+        >
+          {{ 'REPLIES.LIKES' | translate }} ({{ reply.likes.length }})
+        </button>
+      </div>
+    }
+
+    <div class="flex gap-2 items-center mt-3">
+      <img
+        [src]="user?.photo"
+        [alt]="user?.name"
+        class="w-7 h-7 rounded-full object-cover shrink-0 bg-slate-100 border border-slate-50"
+      />
+
+      <div
+        class="flex-1 flex items-center gap-2 bg-slate-100 dark:bg-dark p-1.5 px-3 rounded-full border border-transparent focus-within:border-blue-300 focus-within:bg-white transition-all w-[88%] md:w-full"
+      >
+        <input
+          type="text"
+          [(ngModel)]="replyContent"
+          (keyup.enter)="addReply()"
+          [placeholder]="'REPLIES.PLACEHOLDER' | translate"
+          class="flex-1 bg-transparent border-none text-[13px] outline-none dark:bg-dark dark:text-gray-100 text-slate-800 placeholder-slate-500"
+        />
+
+        <label
+          [attr.title]="'REPLIES.ATTACH_PHOTO' | translate"
+          class="cursor-pointer text-slate-500 hover:text-green-500 transition-colors px-1"
+        >
+          <i class="fa-regular fa-image text-[1.05rem]" aria-hidden="true"></i>
+          <input type="file" (change)="onFileSelected($event)" class="hidden" accept="image/*" />
+        </label>
+
+        <button
+          type="submit"
+          (click)="addReply()"
+          [disabled]="!replyContent.trim() && !selectedFile"
+          class="w-7 h-7 rounded-full bg-primary hover:bg-accent text-white flex items-center justify-center transition-colors disabled:opacity-40 disabled:cursor-not-allowed shrink-0"
+        >
+          <i class="fa-solid fa-paper-plane text-[11px] ms-0.5" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+
+    @if (selectedFile) {
+      <div
+        class="text-[11px] text-slate-500 ml-9 flex items-center gap-2 bg-slate-100 dark:bg-dark p-1 px-2.5 rounded-lg w-fit"
+      >
+        <span class="truncate max-w-[200px]">📎 {{ selectedFile.name }}</span>
+        <button
+          (click)="selectedFile = null"
+          class="text-red-500 font-bold hover:text-red-700 ml-1 text-[12px]"
+        >
+          ✕
+        </button>
+      </div>
+    }
+  </div>
+}
