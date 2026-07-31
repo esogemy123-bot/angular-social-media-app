@@ -15,6 +15,6 @@ A modern, responsive social media web application built with Angular, designed t
 - **Styling:** CSS
 - **Version Control:** Git & GitHub
 
-## 💡 Author
+## 💡 Authorlog
 
 **Esraa**

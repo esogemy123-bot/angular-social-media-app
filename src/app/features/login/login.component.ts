@@ -12,10 +12,11 @@ import { Router, RouterLink } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AuthService } from '../../core/auth/services/auth.service';
 import { TranslatePipe } from '@ngx-translate/core';
+import { SelectLangComponent } from '../select-lang/select-lang.component';
 
 @Component({
   selector: 'app-login',
-  imports: [ReactiveFormsModule, RouterLink, TranslatePipe],
+  imports: [ReactiveFormsModule, RouterLink, TranslatePipe, SelectLangComponent],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })

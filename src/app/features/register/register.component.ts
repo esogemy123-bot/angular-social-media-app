@@ -12,10 +12,11 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
+import { SelectLangComponent } from '../select-lang/select-lang.component';
 
 @Component({
   selector: 'app-register',
-  imports: [ReactiveFormsModule, CommonModule, TranslatePipe],
+  imports: [ReactiveFormsModule, CommonModule, TranslatePipe, SelectLangComponent],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css',
 })
