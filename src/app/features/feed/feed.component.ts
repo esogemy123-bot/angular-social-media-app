@@ -15,6 +15,9 @@ import { FeedContentComponent } from './components/feed-content/feed-content.com
 export class FeedComponent {
   userId = JSON.parse(localStorage.getItem('socialUser')!);
   isNavOpen: boolean = false;
+  isSuggestedFriendsOpen: boolean = false;
+  currentLang: string | null = localStorage.getItem('lang');
+
   isUserPost(postUserId: string) {
     if (this.userId === postUserId) {
       console.log('matched');
@@ -24,5 +27,8 @@ export class FeedComponent {
   }
   toggleNav() {
     this.isNavOpen = !this.isNavOpen;
+  }
+  toggleSuggestedFriends() {
+    this.isSuggestedFriendsOpen = !this.isSuggestedFriendsOpen;
   }
 }
