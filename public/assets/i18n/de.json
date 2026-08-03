@@ -106,26 +106,19 @@
 
   "NOTIFICATIONS": {
     "TITLE": "Benachrichtigungen",
-    "SUBTITLE": "Behalte deine neuesten Benachrichtigungen und Aktivitäten im Blick",
+    "SUBTITLE": "Echtzeit-Updates für Likes, Kommentare, Shares und Follower.",
     "MARK_ALL_READ": "Alle als gelesen markieren",
     "ALL": "Alle",
     "UNREAD": "Ungelesen",
-    "FILTER_ALL": "Alle Benachrichtigungen anzeigen",
-    "FILTER_UNREAD": "Ungelesene Benachrichtigungen anzeigen",
-    "NOTIFICATION_FROM": "Benachrichtigung von",
-    "USER_PHOTO": "Benutzerfoto",
-    "UNREAD_ITEM": "Ungelesenes Element",
-    "UNAVAILABLE": "Dieser Inhalt ist nicht verfügbar",
-    "READ": "Gelesen",
+    "LIKED_POST": "hat deinen Beitrag geliked.",
+    "COMMENTED_POST": "hat deinen Beitrag kommentiert.",
+    "FOLLOWED_USER": "ist dir gefolgt.",
+    "SHARED_POST": "hat deinen Beitrag geteilt.",
+    "INTERACTED": "hat mit dir interagiert.",
+    "CONTENT_UNAVAILABLE": "Dieser Inhalt ist nicht mehr verfügbar.",
+    "READ": "gelesen",
     "MARK_READ": "Als gelesen markieren",
-    "EMPTY": "Noch keine Benachrichtigungen",
-    "TYPES": {
-      "LIKE_POST": "gefällt dein Beitrag",
-      "COMMENT_POST": "hat deinen Beitrag kommentiert",
-      "FOLLOW_USER": "ist dir gefolgt",
-      "SHARE_POST": "hat deinen Beitrag geteilt",
-      "DEFAULT": "hat mit dir interagiert"
-    }
+    "NO_NOTIFICATIONS": "Noch keine Benachrichtigungen."
   },
   "NAVBAR": {
     "BRAND": "Route Posts",

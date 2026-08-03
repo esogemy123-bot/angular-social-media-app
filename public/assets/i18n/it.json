@@ -107,26 +107,19 @@
 
   "NOTIFICATIONS": {
     "TITLE": "Notifiche",
-    "SUBTITLE": "Tieni traccia dei tuoi ultimi avvisi e attività",
+    "SUBTITLE": "Aggiornamenti in tempo reale per mi piace, commenti, condivisioni e follower.",
     "MARK_ALL_READ": "Segna tutti come letti",
     "ALL": "Tutti",
     "UNREAD": "Non letti",
-    "FILTER_ALL": "Visualizza tutte le notifiche",
-    "FILTER_UNREAD": "Visualizza le notifiche non lette",
-    "NOTIFICATION_FROM": "Notifica da",
-    "USER_PHOTO": "Foto utente",
-    "UNREAD_ITEM": "Elemento non letto",
-    "UNAVAILABLE": "Questo contenuto non è disponibile",
-    "READ": "Letto",
+    "LIKED_POST": "ha messo mi piace al tuo post.",
+    "COMMENTED_POST": "ha commentato il tuo post.",
+    "FOLLOWED_USER": "ha iniziato a seguirti.",
+    "SHARED_POST": "ha condiviso il tuo post.",
+    "INTERACTED": "ha interagito con te.",
+    "CONTENT_UNAVAILABLE": "Questo contenuto non è più disponibile.",
+    "READ": "letto",
     "MARK_READ": "Segna come letto",
-    "EMPTY": "Nessuna notifica finora",
-    "TYPES": {
-      "LIKE_POST": "ha messo mi piace al tuo post",
-      "COMMENT_POST": "ha commentato il tuo post",
-      "FOLLOW_USER": "ha iniziato a seguirti",
-      "SHARE_POST": "ha condiviso il tuo post",
-      "DEFAULT": "ha interagito con te"
-    }
+    "NO_NOTIFICATIONS": "Nessuna notifica per ora."
   },
   "NAVBAR": {
     "BRAND": "Route Posts",

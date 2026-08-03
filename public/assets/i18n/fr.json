@@ -105,26 +105,19 @@
   },
   "NOTIFICATIONS": {
     "TITLE": "Notifications",
-    "SUBTITLE": "Suivez vos dernières alertes et activités",
+    "SUBTITLE": "Mises à jour en temps réel pour les j'aime, commentaires, partages et abonnements.",
     "MARK_ALL_READ": "Tout marquer comme lu",
     "ALL": "Tous",
     "UNREAD": "Non lus",
-    "FILTER_ALL": "Afficher toutes les notifications",
-    "FILTER_UNREAD": "Afficher les notifications non lues",
-    "NOTIFICATION_FROM": "Notification de",
-    "USER_PHOTO": "Photo de l'utilisateur",
-    "UNREAD_ITEM": "Élément non lu",
-    "UNAVAILABLE": "Ce contenu n'est pas disponible",
-    "READ": "Lu",
+    "LIKED_POST": "a aimé votre publication.",
+    "COMMENTED_POST": "a commenté votre publication.",
+    "FOLLOWED_USER": "a commencé à vous suivre.",
+    "SHARED_POST": "a partagé votre publication.",
+    "INTERACTED": "a interagi avec vous.",
+    "CONTENT_UNAVAILABLE": "Ce contenu n'est plus disponible.",
+    "READ": "lu",
     "MARK_READ": "Marquer comme lu",
-    "EMPTY": "Aucune notification pour le moment",
-    "TYPES": {
-      "LIKE_POST": "a aimé votre publication",
-      "COMMENT_POST": "a commenté votre publication",
-      "FOLLOW_USER": "a commencé à vous suivre",
-      "SHARE_POST": "a partagé votre publication",
-      "DEFAULT": "a interagi avec vous"
-    }
+    "NO_NOTIFICATIONS": "Aucune notification pour le moment."
   },
   "NAVBAR": {
     "BRAND": "Route Posts",

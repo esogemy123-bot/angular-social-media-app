@@ -106,26 +106,19 @@
 
   "NOTIFICATIONS": {
     "TITLE": "الإشعارات",
-    "SUBTITLE": "تابع أحدث التنبيهات والأنشطة الخاصة بك",
+    "SUBTITLE": "تحديثات فورية للإعجاب والتعليقات والمشاركات والمتابعات.",
     "MARK_ALL_READ": "تحديد الكل كمقروء",
     "ALL": "الكل",
-    "UNREAD": "غير مقروء",
-    "FILTER_ALL": "عرض كل الإشعارات",
-    "FILTER_UNREAD": "عرض الإشعارات غير المقروءة",
-    "NOTIFICATION_FROM": "إشعار من",
-    "USER_PHOTO": "صورة المستخدم",
-    "UNREAD_ITEM": "عنصر غير مقروء",
-    "UNAVAILABLE": "هذا المحتوى غير متوفر",
+    "UNREAD": "غير مقروءة",
+    "LIKED_POST": "أعجب بمنشورك.",
+    "COMMENTED_POST": "علّق على منشورك.",
+    "FOLLOWED_USER": "بدأ متابعتك.",
+    "SHARED_POST": "شارك منشورك.",
+    "INTERACTED": "تفاعل معك.",
+    "CONTENT_UNAVAILABLE": "هذا المحتوى لم يعد متاحاً.",
     "READ": "مقروء",
     "MARK_READ": "تحديد كمقروء",
-    "EMPTY": "لا توجد إشعارات حتى الآن",
-    "TYPES": {
-      "LIKE_POST": "أعجب بمنشورك",
-      "COMMENT_POST": "علق على منشورك",
-      "FOLLOW_USER": "بدأ بمتابعتك",
-      "SHARE_POST": "قام بمشاركة منشورك",
-      "DEFAULT": "تفاعل معك"
-    }
+    "NO_NOTIFICATIONS": "لا توجد إشعارات حتى الآن."
   },
   "NAVBAR": {
     "BRAND": "منشورات رووت",

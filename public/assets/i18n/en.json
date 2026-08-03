@@ -102,21 +102,32 @@
     "IMAGE_MODAL": "Image view modal",
     "CLOSE_MODAL": "Close modal"
   },
+
   "NOTIFICATIONS": {
     "TITLE": "Notifications",
     "SUBTITLE": "Realtime updates for likes, comments, shares, and follows.",
     "MARK_ALL_READ": "Mark all as read",
     "ALL": "All",
     "UNREAD": "Unread",
+    "FILTER_ALL": "All",
+    "FILTER_UNREAD": "Unread",
+    "EMPTY": "No notifications yet.",
+    "NO_NOTIFICATIONS": "No notifications yet.",
+    "READ": "read",
+    "MARK_READ": "Mark as read",
+    "CONTENT_UNAVAILABLE": "This content is no longer available.",
+    "TYPES": {
+      "LIKE_POST": "liked your post.",
+      "COMMENT_POST": "commented on your post.",
+      "FOLLOW_USER": "started following you.",
+      "SHARE_POST": "shared your post.",
+      "DEFAULT": "interacted with you."
+    },
     "LIKED_POST": "liked your post.",
     "COMMENTED_POST": "commented on your post.",
     "FOLLOWED_USER": "started following you.",
     "SHARED_POST": "shared your post.",
-    "INTERACTED": "interacted with you.",
-    "CONTENT_UNAVAILABLE": "This content is no longer available.",
-    "READ": "read",
-    "MARK_READ": "Mark as read",
-    "NO_NOTIFICATIONS": "No notifications yet."
+    "INTERACTED": "interacted with you."
   },
   "NAVBAR": {
     "BRAND": "Route Posts",
